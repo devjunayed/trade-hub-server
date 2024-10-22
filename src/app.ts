@@ -1,4 +1,5 @@
 import express from 'express';
+import router from './app/routes';
 
 
 const app = express();
@@ -10,6 +11,8 @@ app.get("/", (req, res) =>{
     })
 })
 
+
+app.use(router)
 
 
 export default app;
