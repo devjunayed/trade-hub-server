@@ -2,6 +2,8 @@ import { model, Schema } from "mongoose";
 import { TUser, TRole } from "./user.interface";
 import config from "../../config";
 import bcrypt from "bcrypt";
+import httpStatus from "http-status";
+import AppError from "../../errors/AppError";
 
 const userSchema = new Schema<TUser>(
   {
@@ -20,7 +22,7 @@ const userSchema = new Schema<TUser>(
     password: {
       type: String,
       required: true,
-      select: false,
+      select: 0,
     },
     isDeleted: {
       type: Boolean,
@@ -44,18 +46,23 @@ const userSchema = new Schema<TUser>(
 
 // encrypting user password
 userSchema.pre("save", async function (next) {
-  try {
-    const user = this;
-    console.log(user.password)
-    user.password = await bcrypt.hash(
-      user.password,
-      Number(config.salt_rounds)
-    );
-    next();
-  } catch (error) {
-    console.log(error);
+
+  const result = await User.findOne({email: this.email});
+  if(result){
+    throw new AppError(httpStatus.NOT_IMPLEMENTED, 'This email is already in used!');
   }
+
+  this.password = await bcrypt.hash(this.password, Number(config.salt_rounds));
+  next();
 });
+
+userSchema.set('toJSON', {
+  transform: function(doc, ret){
+    delete ret.password
+    return ret
+  }
+})
+
 const User = model<TUser>("user", userSchema);
 
 export default User;
