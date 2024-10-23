@@ -1,5 +1,7 @@
 import { model, Schema } from "mongoose";
 import { TUser, TRole } from "./user.interface";
+import config from "../../config";
+import bcrypt from "bcrypt";
 
 const userSchema = new Schema<TUser>(
   {
@@ -18,7 +20,7 @@ const userSchema = new Schema<TUser>(
     password: {
       type: String,
       required: true,
-      select: 0,
+      select: false,
     },
     isDeleted: {
       type: Boolean,
@@ -40,7 +42,20 @@ const userSchema = new Schema<TUser>(
   }
 );
 
-
-const User = model<TUser>('user', userSchema);
+// encrypting user password
+userSchema.pre("save", async function (next) {
+  try {
+    const user = this;
+    console.log(user.password)
+    user.password = await bcrypt.hash(
+      user.password,
+      Number(config.salt_rounds)
+    );
+    next();
+  } catch (error) {
+    console.log(error);
+  }
+});
+const User = model<TUser>("user", userSchema);
 
 export default User;
