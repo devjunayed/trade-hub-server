@@ -37,6 +37,8 @@ const loginUserIntoDB = async (payload: TLogin) => {
 
   user.password = "";
 
+
+
   return {accessToken, user};
 };
 
