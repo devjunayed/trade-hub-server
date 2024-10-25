@@ -1,31 +1,31 @@
 import { Router } from "express";
-import { UserController } from "./product.controller";
 import { validateRequest } from "../../middlewares/validateRequest";
-import { userValidation } from "./product.validation";
+import { productValidation } from "./product.validation";
+import { ProductController } from "./product.controller";
 
 const router = Router();
 
-// creating user
+// creating product
 router.post(
-  "/create-user",
-  validateRequest(userValidation.createUserValidationSchema),
-  UserController.createUser
+  "/create-product",
+  validateRequest(productValidation.createProductValidationSchema),
+  ProductController.createProduct
 );
 
-// getting all user
-router.get("/", UserController.getAllUser);
+// getting all product
+router.get("/", ProductController.getAllProduct);
 
-// getting single user
-router.get("/:id", UserController.getSingleUser);
+// getting single product
+router.get("/:id", ProductController.getSingleProduct);
 
-// updating a user
+// updating a product
 router.patch(
   "/:id",
-  validateRequest(userValidation.updateUserValidationSchema),
-  UserController.updateUser
+  validateRequest(productValidation.updateProductValidationSchema),
+  ProductController.updateProduct
 );
 
-// updating a user
-router.delete("/:id", UserController.deleteUser);
+// updating a product
+router.delete("/:id", ProductController.deleteProduct);
 
-export const UserRoutes = router;
+export const ProductRoutes = router;

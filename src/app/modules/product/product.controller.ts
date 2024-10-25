@@ -1,82 +1,82 @@
 import { catchAsync } from "../../utils/catchAsync";
 import { sendResponse } from "../../utils/sendResponse";
-import { UserServices } from "./product.service";
 import httpStatus from "http-status";
+import { ProductServices } from "./product.service";
 
-// creating user
-const createUser = catchAsync(async (req, res) => {
-  const result = await UserServices.createUserIntoDB(req.body);
+// creating product
+const createProduct = catchAsync(async (req, res) => {
+  const result = await ProductServices.createProductIntoDB(req.body);
 
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: "User created successfully!",
+    message: "Product created successfully!",
     data: result,
   });
 });
 
-// getting all user data
-const getAllUser = catchAsync(async (req, res) => {
-  const result = await UserServices.getAllUserFromDB();
+// getting all product data
+const getAllProduct = catchAsync(async (req, res) => {
+  const result = await ProductServices.getAllProductFromDB();
 
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: "All User retrieved successfully!",
-    data: result,
-  });
-});
-
-
-// getting a single user data using id
-const getSingleUser = catchAsync(async (req, res) => {
-  const result = await UserServices.getSingleUserFromDB(req.params.id);
-
-
-  sendResponse(res, {
-    statusCode: httpStatus.OK,
-    success: true,
-    message: "User retrieved successfully!",
+    message: "All Product retrieved successfully!",
     data: result,
   });
 });
 
 
-// updating a single user data using id and it's new data
-const updateUser = catchAsync(async (req, res) => {
-  const result = await UserServices.updateUserIntoDB(req.params.id, req.body);
+// getting a single product data using id
+const getSingleProduct = catchAsync(async (req, res) => {
+  const result = await ProductServices.getSingleProductFromDB(req.params.id);
 
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: "User updated successfully!",
+    message: "Product retrieved successfully!",
     data: result,
   });
 });
 
-// deleting a single user  using id
-const deleteUser = catchAsync(async (req, res) => {
-  const result = await UserServices.deleteUserFromDB(req.params.id);
+
+// updating a single product data using id and it's new data
+const updateProduct = catchAsync(async (req, res) => {
+  const result = await ProductServices.updateProductIntoDB(req.params.id, req.body);
 
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: "User deleted successfully!",
+    message: "Product updated successfully!",
+    data: result,
+  });
+});
+
+// deleting a single product  using id
+const deleteProduct = catchAsync(async (req, res) => {
+  const result = await ProductServices.deleteProductFromDB(req.params.id);
+
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: "Product deleted successfully!",
     data: result,
   });
 });
 
 
 // exporting all controllers
-export const UserController = {
-  createUser,
-  getAllUser,
-  getSingleUser,
-  updateUser,
-  deleteUser
+export const ProductController = {
+  createProduct,
+  getAllProduct,
+  getSingleProduct,
+  updateProduct,
+  deleteProduct
   
 };
