@@ -1,5 +1,4 @@
 import AppError from "../../errors/AppError";
-import { TUser } from "./product.interface";
 import User from "./product.model";
 import httpStatus from "http-status";
 

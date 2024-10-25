@@ -1,8 +1,4 @@
 import { model, Schema } from "mongoose";
-import config from "../../config";
-import bcrypt from "bcrypt";
-import httpStatus from "http-status";
-import AppError from "../../errors/AppError";
 import { TCategory } from "./category.interface";
 
 const categorySchema = new Schema<TCategory>(
