@@ -1,46 +1,47 @@
 import AppError from "../../errors/AppError";
-import User from "./product.model";
 import httpStatus from "http-status";
+import Product from "./product.model";
+import { TProduct } from "./product.interface";
 
-const createUserIntoDB = async (payload: TUser) => {
-  const result = await User.create(payload);
+const createProductIntoDB = async (payload: TProduct) => {
+  const result = await Product.create(payload);
   return result;
 };
-const getAllUserFromDB = async () => {
-  const result = await User.find({ isDeleted: { $ne: true } });
-  return result;
-};
-
-const getSingleUserFromDB = async (id: string) => {
-  const result = await User.findById(id).find({ isDeleted: { $ne: true } });
+const getAllProductFromDB = async () => {
+  const result = await Product.find({ isDeleted: { $ne: true } });
   return result;
 };
 
-const updateUserIntoDB = async (id: string, payload: Partial<TUser>) => {
-  const user = await User.findById(id).find({ isDeleted: { $ne: true } });
+const getSingleProductFromDB = async (id: string) => {
+  const result = await Product.findById(id).find({ isDeleted: { $ne: true } });
+  return result;
+};
 
-  if (!user || user.length === 0) {
-    throw new AppError(httpStatus.NOT_FOUND, "User is deleted");
+const updateProductIntoDB = async (id: string, payload: Partial<TProduct>) => {
+  const product = await Product.findById(id).find({ isDeleted: { $ne: true } });
+
+  if (!product || product.length === 0) {
+    throw new AppError(httpStatus.NOT_FOUND, "Product is deleted");
   }
 
-  const updateUser = await User.findByIdAndUpdate(id, payload);
+  const updateProduct = await Product.findByIdAndUpdate(id, payload);
 
-  const result = await User.findById(updateUser!._id);
+  const result = await Product.findById(updateProduct!._id);
 
   return result;
 };
 
-const deleteUserFromDB = async (id: string) => {
-  const deletedUser = await User.findByIdAndUpdate(id, { isDeleted: true });
+const deleteProductFromDB = async (id: string) => {
+  const deletedProduct = await Product.findByIdAndUpdate(id, { isDeleted: true });
 
-  const result = await User.findById(deletedUser!._id);
+  const result = await Product.findById(deletedProduct!._id);
   return result;
 };
 
-export const UserServices = {
-  createUserIntoDB,
-  getAllUserFromDB,
-  getSingleUserFromDB,
-  updateUserIntoDB,
-  deleteUserFromDB,
+export const ProductServices = {
+  createProductIntoDB,
+  getAllProductFromDB,
+  getSingleProductFromDB,
+  updateProductIntoDB,
+  deleteProductFromDB,
 };
