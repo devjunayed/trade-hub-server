@@ -7,7 +7,7 @@ import jwt, { JwtPayload } from 'jsonwebtoken';
 import User from "../modules/user/user.model";
 
 
-const auth = (...roles: TRole[]) => {
+export const auth = (...roles: TRole[]) => {
   return catchAsync(async (req, res, next) => {
     const token = req.headers.authorization;
 
