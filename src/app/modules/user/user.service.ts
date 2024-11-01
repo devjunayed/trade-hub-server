@@ -4,10 +4,10 @@ import { TUser } from "./user.interface";
 import User from "./user.model";
 import httpStatus from "http-status";
 import QueryBuilder from "../../builder/QueryBuilder";
+import { userSearchFields } from "./user.constant";
 
 // Creating user into db
 const createUserIntoDB = async (payload: TUser) => {
-
   // checking if user is trying to be admin
   if (payload.role === "admin") {
     throw new AppError(
@@ -28,7 +28,10 @@ const createUserByAdminIntoDB = async (payload: TUser) => {
 
 // getting all user information
 const getAllUserFromDB = async (query: Record<string, unknown>) => {
-  const userQuery = new QueryBuilder(User.find(), query).paginate();
+  const userQuery = new QueryBuilder(User.find(), query)
+    .search(userSearchFields)
+    .paginate()
+    .fields();
 
   const result = await userQuery.modelQuery;
   return result;
@@ -60,11 +63,9 @@ const updateUserIntoDB = async (req: Request) => {
     );
   }
 
-
-
   if (
     userRole !== "admin" &&
-    (req?.user?.userId as string) !== (user[0]?._id?.toString())
+    (req?.user?.userId as string) !== user[0]?._id?.toString()
   ) {
     throw new AppError(
       httpStatus.UNAUTHORIZED,

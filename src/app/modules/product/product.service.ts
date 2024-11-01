@@ -2,13 +2,20 @@ import AppError from "../../errors/AppError";
 import httpStatus from "http-status";
 import Product from "./product.model";
 import { TProduct } from "./product.interface";
+import QueryBuilder from "../../builder/QueryBuilder";
+import { query } from "express";
+import { Query } from "mongoose";
 
+// creating product into db
 const createProductIntoDB = async (payload: TProduct) => {
   const result = await Product.create(payload);
   return result;
 };
-const getAllProductFromDB = async () => {
-  const result = await Product.find({ isDeleted: { $ne: true } });
+
+// getting all product from db
+const getAllProductFromDB = async (query: Record<string, unknown>) => {
+  const productQuery = new QueryBuilder(Product.find(), query);
+  const result = await productQuery.modelQuery;
   return result;
 };
 

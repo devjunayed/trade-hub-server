@@ -24,6 +24,7 @@ router.get("/:id", ProductController.getSingleProduct);
 // updating a product
 router.patch(
   "/:id",
+  auth(TRole.ADMIN),
   validateRequest(productValidation.updateProductValidationSchema),
   ProductController.updateProduct
 );

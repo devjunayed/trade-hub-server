@@ -39,7 +39,7 @@ router.patch(
 // updating a user
 router.delete(
   "/:id",
-  auth(TRole.ADMIN, TRole.USER),
+  auth(TRole.ADMIN),
   UserController.deleteUser
 );
 
