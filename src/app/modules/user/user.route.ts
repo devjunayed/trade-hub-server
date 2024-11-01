@@ -2,30 +2,45 @@ import { Router } from "express";
 import { UserController } from "./user.controller";
 import { validateRequest } from "../../middlewares/validateRequest";
 import { userValidation } from "./user.validation";
+import { auth } from "../../middlewares/auth";
+import { TRole } from "./user.interface";
 
 const router = Router();
 
 // creating user
 router.post(
-  "/create-user",
+  "/user-create",
   validateRequest(userValidation.createUserValidationSchema),
   UserController.createUser
 );
 
+// creating user by admin
+router.post(
+  "/admin-create",
+  auth(TRole.ADMIN),
+  validateRequest(userValidation.createUserValidationSchema),
+  UserController.createUserByAdmin
+);
+
 // getting all user
-router.get("/", UserController.getAllUser);
+router.get("/", auth(TRole.ADMIN), UserController.getAllUser);
 
 // getting single user
-router.get("/:id", UserController.getSingleUser);
+router.get("/:id", auth(TRole.ADMIN, TRole.USER), UserController.getSingleUser);
 
 // updating a user
 router.patch(
   "/:id",
+  auth(TRole.ADMIN, TRole.USER),
   validateRequest(userValidation.updateUserValidationSchema),
   UserController.updateUser
 );
 
 // updating a user
-router.delete("/:id", UserController.deleteUser);
+router.delete(
+  "/:id",
+  auth(TRole.ADMIN, TRole.USER),
+  UserController.deleteUser
+);
 
 export const UserRoutes = router;

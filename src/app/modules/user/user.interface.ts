@@ -3,6 +3,7 @@ export enum TRole{
     ADMIN = 'admin'
 };
 export type TUser = {
+  _id?: string;
   name: string;
   email: string;
   phone: string;

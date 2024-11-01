@@ -16,6 +16,20 @@ const createUser = catchAsync(async (req, res) => {
   });
 });
 
+
+// creating user by admin
+const createUserByAdmin = catchAsync(async (req, res) => {
+  const result = await UserServices.createUserByAdminIntoDB(req.body);
+
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: "User created successfully!",
+    data: result,
+  });
+});
+
 // getting all user data
 const getAllUser = catchAsync(async (req, res) => {
   const result = await UserServices.getAllUserFromDB();
@@ -46,7 +60,7 @@ const getSingleUser = catchAsync(async (req, res) => {
 
 // updating a single user data using id and it's new data
 const updateUser = catchAsync(async (req, res) => {
-  const result = await UserServices.updateUserIntoDB(req.params.id, req.body);
+  const result = await UserServices.updateUserIntoDB(req);
 
 
   sendResponse(res, {
@@ -74,6 +88,7 @@ const deleteUser = catchAsync(async (req, res) => {
 // exporting all controllers
 export const UserController = {
   createUser,
+  createUserByAdmin,
   getAllUser,
   getSingleUser,
   updateUser,

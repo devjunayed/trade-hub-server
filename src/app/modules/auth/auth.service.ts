@@ -13,7 +13,6 @@ const loginUserIntoDB = async (payload: TLogin) => {
   if (!user) {
     throw new AppError(httpStatus.NOT_FOUND, "This is user doesn't exists");
   }
-  console.log(user);
 
   // comparing password
   const hashedResult = await bcrypt.compare(payload.password, user.password);
