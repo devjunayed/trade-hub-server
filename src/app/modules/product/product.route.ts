@@ -29,7 +29,7 @@ router.patch(
   ProductController.updateProduct
 );
 
-// updating a product
-router.delete("/:id", ProductController.deleteProduct);
+// deleting a product
+router.delete("/:id", auth(TRole.ADMIN), ProductController.deleteProduct);
 
 export const ProductRoutes = router;

@@ -3,8 +3,7 @@ import httpStatus from "http-status";
 import Product from "./product.model";
 import { TProduct } from "./product.interface";
 import QueryBuilder from "../../builder/QueryBuilder";
-import { query } from "express";
-import { Query } from "mongoose";
+import { productSearchFields } from "./product.constant";
 
 // creating product into db
 const createProductIntoDB = async (payload: TProduct) => {
@@ -14,7 +13,10 @@ const createProductIntoDB = async (payload: TProduct) => {
 
 // getting all product from db
 const getAllProductFromDB = async (query: Record<string, unknown>) => {
-  const productQuery = new QueryBuilder(Product.find(), query);
+  const productQuery = new QueryBuilder(Product.find(), query)
+    .filter()
+    .search(productSearchFields)
+    .paginate();
   const result = await productQuery.modelQuery;
   return result;
 };
@@ -39,7 +41,9 @@ const updateProductIntoDB = async (id: string, payload: Partial<TProduct>) => {
 };
 
 const deleteProductFromDB = async (id: string) => {
-  const deletedProduct = await Product.findByIdAndUpdate(id, { isDeleted: true });
+  const deletedProduct = await Product.findByIdAndUpdate(id, {
+    isDeleted: true,
+  });
 
   const result = await Product.findById(deletedProduct!._id);
   return result;
