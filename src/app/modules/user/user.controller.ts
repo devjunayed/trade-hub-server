@@ -32,7 +32,7 @@ const createUserByAdmin = catchAsync(async (req, res) => {
 
 // getting all user data
 const getAllUser = catchAsync(async (req, res) => {
-  const result = await UserServices.getAllUserFromDB();
+  const result = await UserServices.getAllUserFromDB(req.query);
 
 
   sendResponse(res, {

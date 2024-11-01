@@ -3,8 +3,12 @@ import AppError from "../../errors/AppError";
 import { TUser } from "./user.interface";
 import User from "./user.model";
 import httpStatus from "http-status";
+import QueryBuilder from "../../builder/QueryBuilder";
 
+// Creating user into db
 const createUserIntoDB = async (payload: TUser) => {
+
+  // checking if user is trying to be admin
   if (payload.role === "admin") {
     throw new AppError(
       httpStatus.UNAUTHORIZED,
@@ -16,13 +20,17 @@ const createUserIntoDB = async (payload: TUser) => {
   return result;
 };
 
+// creating user only accessed by admin
 const createUserByAdminIntoDB = async (payload: TUser) => {
   const result = await User.create(payload);
   return result;
 };
 
-const getAllUserFromDB = async () => {
-  const result = await User.find({ isDeleted: { $ne: true } });
+// getting all user information
+const getAllUserFromDB = async (query: Record<string, unknown>) => {
+  const userQuery = new QueryBuilder(User.find(), query).paginate();
+
+  const result = await userQuery.modelQuery;
   return result;
 };
 
