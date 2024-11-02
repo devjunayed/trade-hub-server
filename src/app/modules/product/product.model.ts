@@ -20,7 +20,7 @@ const productSchema = new Schema<TProduct>(
       required: true,
     },
     category: {
-      type: String,
+      type: Schema.ObjectId,
       ref: 'category',
       required: true,
     },

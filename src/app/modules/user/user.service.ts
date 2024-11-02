@@ -34,6 +34,7 @@ const getAllUserFromDB = async (query: Record<string, unknown>) => {
     .fields();
 
   const result = await userQuery.modelQuery;
+  console.log(result)
   return result;
 };
 

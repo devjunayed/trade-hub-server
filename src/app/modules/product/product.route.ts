@@ -9,7 +9,7 @@ const router = Router();
 
 // creating product
 router.post(
-  "/create-product",
+  "/",
  auth(TRole.ADMIN),
   validateRequest(productValidation.createProductValidationSchema),
   ProductController.createProduct

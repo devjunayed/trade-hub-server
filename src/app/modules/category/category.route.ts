@@ -9,7 +9,7 @@ const router = Router();
 
 // creating category
 router.post(
-  "/create-category",
+  "/",
   auth(TRole.ADMIN),
   validateRequest(categoryValidation.createCategoryValidationSchema),
   CategoryController.createCategory
