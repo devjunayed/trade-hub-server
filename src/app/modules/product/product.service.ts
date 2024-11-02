@@ -13,13 +13,12 @@ const createProductIntoDB = async (payload: TProduct) => {
 
 // getting all product from db
 const getAllProductFromDB = async (query: Record<string, unknown>) => {
-
-  const productQuery = new QueryBuilder(Product.find(), query)
-    .filter()
+  const productQuery = new QueryBuilder(Product.find().populate('category'), query)
     .search(productSearchFields)
+    .filter()
     .paginate();
   const result = await productQuery.modelQuery;
-  console.log(result)
+  console.log(result);
   return result;
 };
 
