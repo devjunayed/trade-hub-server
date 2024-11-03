@@ -2,6 +2,7 @@ import { catchAsync } from "../../utils/catchAsync";
 import { OrderServices } from "./order.service";
 import { sendResponse } from "../../utils/sendResponse";
 import { Request, Response } from "express";
+import httpStatus from "http-status";
 
 const createOrder = catchAsync(async(req: Request, res: Response) => {
     const result = await OrderServices.createOrderIntoDb(req);

@@ -13,9 +13,6 @@ const orderValidationSchema = z.object({
         })
       )
       .nonempty({ message: "At least one product is required" }),
-    payableAmount: z
-      .number()
-      .positive({ message: "Payable amount must be positive" }),
     paymentStatus: z.enum(["paid", "pending", "canceled"]).default("pending"),
   }),
 });

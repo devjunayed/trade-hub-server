@@ -13,8 +13,8 @@ const orderSchema = new Schema<TOrder>({
     required: true,
   },
   products: [orderProductsSchema],
-  payableAmount: {
-    type: Number,
+  totalPrice: {
+    type: String,
     required: true,
   },
   paymentStatus: {
