@@ -2,6 +2,8 @@ import { Request } from "express";
 import Product from "../product/product.model";
 import { TOrderProducts } from "./order.interface";
 import User from "../user/user.model";
+import { initiatePayment } from "../payment/payment.utils";
+import Order from "./order.model";
 
 const createOrderIntoDb = async (req: Request) => {
   const userId = req?.user?.userId;
@@ -39,7 +41,15 @@ const createOrderIntoDb = async (req: Request) => {
     customerAddress: user?.address,
   };
 
-  console.log(paymentData)
+  const paymentResponse = await initiatePayment(paymentData);
+
+  const result = await Order.create({
+    userId,
+    ...req.body,
+    totalPrice,
+  });
+
+  return { result, paymentResponse };
 };
 
 export const OrderServices = {

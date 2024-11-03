@@ -10,5 +10,8 @@ export default {
     salt_rounds: process.env.SALT_ROUNDS,
     node_env: process.env.NODE_ENV,
     access_secret: process.env.ACCESS_SECRET,
-    expires_in: process.env.EXPIRES_IN
+    expires_in: process.env.EXPIRES_IN,
+    server_api: process.env.SERVER_API,
+    store_id: process.env.STORE_ID,
+    store_pass: process.env.STORE_PASS
 }

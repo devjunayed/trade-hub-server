@@ -7,7 +7,7 @@ export type TOrder = {
   userId?: string;
   products: TOrderProducts[];
   totalPrice: {
-    type: String;
+    type: number;
     required: true;
   };
   paymentStatus?: "pending" | "paid" | "canceled";
