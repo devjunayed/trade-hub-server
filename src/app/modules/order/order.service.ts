@@ -45,6 +45,7 @@ const createOrderIntoDb = async (req: Request) => {
 
   const result = await Order.create({
     userId,
+    transactionId,
     ...req.body,
     totalPrice,
   });

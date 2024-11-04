@@ -5,6 +5,7 @@ export type TOrderProducts = {
 
 export type TOrder = {
   userId?: string;
+  transactionId: string;
   products: TOrderProducts[];
   totalPrice: {
     type: number;

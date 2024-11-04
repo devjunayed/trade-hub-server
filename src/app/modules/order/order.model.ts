@@ -22,6 +22,11 @@ const orderSchema = new Schema<TOrder>({
     enum: ["paid", "pending", "canceled"],
     default: "pending",
   },
+  transactionId: {
+    type: String,
+    required: true,
+    unique: true
+  }
 });
 
 const Order = model("Order", orderSchema);
