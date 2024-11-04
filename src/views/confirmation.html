@@ -1,11 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Payment</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
   </head>
   <style>
     .wrapper {
@@ -16,94 +14,101 @@
       align-items: center;
     }
     .content {
-        min-width: 50vw;
-        padding: 20px;
-        border-radius: 20px;
-        text-align: center;
-        box-shadow: 1px 1px 1px lightgray;
+      min-width: 50vw;
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 1px 1px 1px lightgray;
       background-color: whitesmoke;
     }
-    h3{
-        font-size: 24px;
+    h3 {
+      font-size: 24px;
     }
-    h1{
-        text-align: center;
-        padding-bottom: 30px;
+    h1 {
+      text-align: center;
+      padding-bottom: 30px;
     }
-    a{
-        border-radius: 10px;
-        margin: 0 auto;
-        background-color: black;
-        color: white;
-        text-decoration: none;
-        padding: 10px 20px;
+    a {
+      border-radius: 10px;
+      margin: 0 auto;
+      background-color: black;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
     }
-    .summary{
-        padding-bottom: 20px;
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    .summary {
+      padding-bottom: 20px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
-    table{
-        text-align: left;
-        width: 100%;
-        border-collapse: collapse;
-        border: 1px solid black;
-        margin-bottom: 20px;
+    table {
+      text-align: left;
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid black;
+      margin-bottom: 20px;
     }
-    th{
-        border-bottom: 1px solid black;
+    th {
+      border-bottom: 1px solid black;
     }
-    td{
-        border: 1px solid black;
+    td {
+      border: 1px solid black;
     }
-    tr, td, th{
-        padding: 10px 20px;
+    tr,
+    td,
+    th {
+      padding: 10px 20px;
     }
-   
   </style>
   <body>
     <div class="wrapper">
-        <button onclick="captureScreenshot()">Save Screenshot</button>
+      <button
+        style="
+          margin-bottom: 25px;
+          padding: 8px 30px;
+          box-shadow: 1px 2px 2px solid gray;
+          border: none;
+          background-color: #333333;
+          color: white;
+          border-radius: 5px;
+        "
+        onclick="window.print()"
+      >
+        Print
+      </button>
       <div class="content" id="content">
-       <div>
-        <img width="200" src="https://i.ibb.co.com/hskdx8D/trade-hub.png" alt="">
-       </div>
+        <div>
+          <img
+            width="200"
+            src="https://i.ibb.co.com/hskdx8D/trade-hub.png"
+            alt=""
+          />
+        </div>
         <h3>{{message}}</h3>
-        
 
         <table>
-            <tr>
-
-                <th colspan="10" style="text-align: center;width: 100%;"><h2 class="summary-title">Booking Summary</h2></th>
-            </tr>
-            <tr>
-                <td colspan="10" style="font-weight: bold;">Transaction ID: {{trxId}}</td>
-            </tr>
-            {{productDetail}}
-            <tr>
-                <td style="text-align: right; font-weight: bold;">Cost:</td>
-                <td style="font-weight: bold;">{{cost}} /= </td>
-            </tr>
+          <tr>
+            <th colspan="10" style="text-align: center; width: 100%">
+              <h2 class="summary-title">Order Summary</h2>
+            </th>
+          </tr>
+          <tr>
+            <td colspan="10" style="font-weight: bold">
+              Transaction ID: {{trxId}}
+            </td>
+          </tr>
+          {{productDetail}}
+          <tr>
+            <td style="text-align: right; font-weight: bold">Cost:</td>
+            <td style="font-weight: bold">{{cost}} /=</td>
+          </tr>
         </table>
-       
+
         <a href="https://sportyfy.devjunayed.xyz">Go Home</a>
       </div>
     </div>
-
-
-<script>
-    function captureScreenshot() {
-      const content = document.getElementById("content");
-      html2canvas(content).then(canvas => {
-        const link = document.createElement("a");
-        link.href = canvas.toDataURL("image/png");
-        link.download = "screenshot.png";
-        link.click();
-      });
-    }
-  </script>
   </body>
 </html>
