@@ -20,6 +20,10 @@ const createUserValidationSchema = z.object({
       required_error: "Password is required",
       invalid_type_error: "Password must be a string",
     }),
+    confirmPassword: z.string({
+      required_error: "Password confirmation is required",
+      invalid_type_error: "Password confirmation must be a string",
+    }),
     phone: z
       .string({
         required_error: "Phone is required",
@@ -33,6 +37,9 @@ const createUserValidationSchema = z.object({
       })
       .default("user"),
     isDeleted: z.boolean().optional().default(false),
+  }).refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords do not match",
+    path: ["confirmPassword"],
   }),
 });
 

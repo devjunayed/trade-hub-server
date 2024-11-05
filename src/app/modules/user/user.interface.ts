@@ -9,6 +9,7 @@ export type TUser = {
   phone: string;
   address: string;
   password: string;
+  confirmPassword?: string;
   role: TRole;
   isDeleted: boolean;
 };

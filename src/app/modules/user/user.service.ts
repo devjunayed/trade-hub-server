@@ -16,6 +16,12 @@ const createUserIntoDB = async (payload: TUser) => {
     );
   }
 
+  if(!(payload.password === payload.confirmPassword)){
+    throw new AppError(httpStatus.CONFLICT, "Password do not matched");
+  }
+
+  delete payload.confirmPassword;
+
   const result = await User.create(payload);
   return result;
 };
