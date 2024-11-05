@@ -28,8 +28,7 @@ const createUserValidationSchema = z.object({
       .string({
         required_error: "Phone is required",
         invalid_type_error: "Phone must be a string",
-      })
-      .regex(/^\+?[1-9]\d{1,14}$/, "Invalid phone number format"),
+      }),
     role: z
       .enum(["user", "admin"], {
         required_error: "Role is required",

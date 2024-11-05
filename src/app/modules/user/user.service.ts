@@ -5,9 +5,17 @@ import User from "./user.model";
 import httpStatus from "http-status";
 import QueryBuilder from "../../builder/QueryBuilder";
 import { userSearchFields } from "./user.constant";
+import { createToken } from "../auth/auth.utils";
+import config from "../../config";
 
 // Creating user into db
 const createUserIntoDB = async (payload: TUser) => {
+  const user = await User.findOne({ email: payload.email });
+
+  if (user) {
+    throw new AppError(httpStatus.NOT_FOUND, "This user is already exist");
+  }
+
   // checking if user is trying to be admin
   if (payload.role === "admin") {
     throw new AppError(
@@ -16,14 +24,34 @@ const createUserIntoDB = async (payload: TUser) => {
     );
   }
 
-  if(!(payload.password === payload.confirmPassword)){
+  if (!(payload.password === payload.confirmPassword)) {
     throw new AppError(httpStatus.CONFLICT, "Password do not matched");
   }
 
   delete payload.confirmPassword;
 
   const result = await User.create(payload);
-  return result;
+
+  // creating jwt payload
+  const jwtPayload = {
+    userId: result._id as unknown as string,
+    role: result.role,
+  };
+
+  // generating access token
+  const accessToken = createToken(
+    jwtPayload,
+    config.access_secret as string,
+    config.expires_in as string
+  );
+  const refreshToken = createToken(
+    jwtPayload,
+    config.refresh_secret as string,
+    config.refresh_expires_in as string
+  );
+
+  return { accessToken, user };
+
 };
 
 // creating user only accessed by admin
@@ -40,7 +68,7 @@ const getAllUserFromDB = async (query: Record<string, unknown>) => {
     .fields();
 
   const result = await userQuery.modelQuery;
-  console.log(result)
+  console.log(result);
   return result;
 };
 

@@ -33,6 +33,11 @@ const loginUserIntoDB = async (payload: TLogin) => {
     config.access_secret as string,
     config.expires_in as string
   );
+  const refreshToken = createToken(
+    jwtPayload,
+    config.refresh_secret as string,
+    config.refresh_expires_in as string
+  );
 
   user.password = "";
 
