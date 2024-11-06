@@ -50,7 +50,7 @@ const createUserIntoDB = async (payload: TUser) => {
     config.refresh_expires_in as string
   );
 
-  return { accessToken, user };
+  return {name: result.name, userId: result._id, accessToken, refreshToken };
 
 };
 

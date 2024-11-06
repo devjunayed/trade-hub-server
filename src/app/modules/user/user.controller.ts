@@ -7,6 +7,8 @@ import httpStatus from "http-status";
 const createUser = catchAsync(async (req, res) => {
   const result = await UserServices.createUserIntoDB(req.body);
 
+  res.cookie('access-token', result.accessToken)
+  res.cookie('refresh-token', result.refreshToken)
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
