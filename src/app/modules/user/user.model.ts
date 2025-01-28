@@ -58,17 +58,7 @@ userSchema.pre("save", async function (next) {
   this.password = await bcrypt.hash(this.password, Number(config.salt_rounds));
   next();
 });
-// encrypting user password
-userSchema.pre("findOneAndUpdate", async function (next) {
-  const data = (this as Record<any, any>)?._update;
 
-  if (data.password === "") {
-    next();
-  }
-
-  data.password = await bcrypt.hash(data.password, Number(config.salt_rounds));
-  next();
-});
 
 userSchema.pre("find", async function (next) {
   this.find({ isDeleted: { $ne: true } });

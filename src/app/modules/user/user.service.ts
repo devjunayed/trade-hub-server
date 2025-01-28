@@ -7,6 +7,7 @@ import QueryBuilder from "../../builder/QueryBuilder";
 import { userSearchFields } from "./user.constant";
 import { createToken } from "../auth/auth.utils";
 import config from "../../config";
+import bcrypt from 'bcrypt'
 
 // Creating user into db
 const createUserIntoDB = async (payload: TUser) => {
@@ -107,6 +108,10 @@ const updateUserIntoDB = async (req: Request) => {
     );
   }
 
+  if(payload.password !== ""){
+    await bcrypt.hash(payload.password, Number(config.salt_rounds));
+  }
+
   const updatedUser = await User.findOneAndUpdate({_id: id}, payload);
 
   const result = await User.findById(updatedUser!._id);
@@ -117,8 +122,8 @@ const updateUserIntoDB = async (req: Request) => {
 const deleteUserFromDB = async (id: string) => {
   const deletedUser = await User.findByIdAndUpdate(id, { isDeleted: true });
 
-  const result = await User.findById(deletedUser!._id);
-  return result;
+
+  return deletedUser;
 };
 
 export const UserServices = {
