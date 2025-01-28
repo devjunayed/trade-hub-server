@@ -24,8 +24,8 @@ const productSchema = new Schema<TProduct>(
       ref: 'category',
       required: true,
     },
-    productImage: {
-      type: String,
+    productImages: {
+      type: [String],
       required: true,
     },
     isDeleted: {
@@ -37,6 +37,8 @@ const productSchema = new Schema<TProduct>(
     timestamps: true,
   }
 );
+
+
 
 const Product = model<TProduct>("product", productSchema);
 

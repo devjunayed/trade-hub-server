@@ -7,6 +7,6 @@ export type TProduct = {
   price: number;
   stockQuantity: number;
   category: Types.ObjectId;
-  productImage: string;
+  productImages: string[];
   isDeleted: boolean;
 };

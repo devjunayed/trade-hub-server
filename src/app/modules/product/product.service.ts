@@ -13,7 +13,10 @@ const createProductIntoDB = async (payload: TProduct) => {
 
 // getting all product from db
 const getAllProductFromDB = async (query: Record<string, unknown>) => {
-  const productQuery = new QueryBuilder(Product.find().populate('category'), query)
+  const productQuery = new QueryBuilder(
+    Product.find({ isDeleted: { $ne: true } }).populate("category"),
+    query
+  )
     .search(productSearchFields)
     .filter()
     .paginate();

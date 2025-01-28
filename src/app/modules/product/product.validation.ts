@@ -22,10 +22,12 @@ const createProductValidationSchema = z.object({
       required_error: "Category is required",
       invalid_type_error: "Category must be a string",
     }),
-    productImage: z.string({
-      required_error: "Product Image is required",
-      invalid_type_error: "Product Image must be a string url",
-    }),
+    productImages: z.array(
+      z.string({
+        required_error: "Product Image is required",
+        invalid_type_error: "Product Image must be a string url",
+      })
+    ),
     isDeleted: z.boolean().optional().default(false),
   }),
 });
@@ -61,11 +63,12 @@ const updateProductValidationSchema = z.object({
         invalid_type_error: "Category must be a string",
       })
       .optional(),
-    productImage: z
-      .string({
-        required_error: "Product Image is required",
-        invalid_type_error: "Product Image must be a string url",
-      })
+    productImages: z
+      .array(
+        z.string({
+          invalid_type_error: "Product Image must be a string url",
+        })
+      )
       .optional(),
     isDeleted: z.boolean().optional().default(false),
   }),
