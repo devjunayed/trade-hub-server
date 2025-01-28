@@ -106,7 +106,7 @@ const updateUserValidationSchema = z.object({
       .string({
         invalid_type_error: "Phone must be a string",
       })
-      .regex(/^\+?[1-9]\d{1,14}$/, "Invalid phone number format")
+      .regex(/^\+?[0-9]\d{1,14}$/, "Invalid phone number format")
       .optional(),
     role: z
       .enum(["user", "admin"], {

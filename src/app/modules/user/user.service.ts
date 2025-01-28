@@ -107,9 +107,9 @@ const updateUserIntoDB = async (req: Request) => {
     );
   }
 
-  const updateUser = await User.findByIdAndUpdate(id, payload);
+  const updatedUser = await User.findOneAndUpdate({_id: id}, payload);
 
-  const result = await User.findById(updateUser!._id);
+  const result = await User.findById(updatedUser!._id);
 
   return result;
 };

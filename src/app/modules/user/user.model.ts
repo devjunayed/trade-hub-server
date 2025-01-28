@@ -1,9 +1,10 @@
-import { model, Schema } from "mongoose";
+import { model, Query, Schema } from "mongoose";
 import { TUser, TRole } from "./user.interface";
 import config from "../../config";
 import bcrypt from "bcrypt";
 import httpStatus from "http-status";
 import AppError from "../../errors/AppError";
+import DocumentQuery from "mongoose";
 
 const userSchema = new Schema<TUser>(
   {
@@ -46,32 +47,44 @@ const userSchema = new Schema<TUser>(
 
 // encrypting user password
 userSchema.pre("save", async function (next) {
-
-  const result = await User.findOne({email: this.email});
-  if(result){
-    throw new AppError(httpStatus.NOT_IMPLEMENTED, 'This email is already in used!');
+  const result = await User.findOne({ email: this.email });
+  if (result) {
+    throw new AppError(
+      httpStatus.NOT_IMPLEMENTED,
+      "This email is already in used!"
+    );
   }
 
   this.password = await bcrypt.hash(this.password, Number(config.salt_rounds));
   next();
 });
+// encrypting user password
+userSchema.pre("findOneAndUpdate", async function (next) {
+  const data = (this as Record<any, any>)?._update;
 
-
-userSchema.pre('find', async function (next){
-  this.find({isDeleted: {$ne: true}});
-  next();
-})
-userSchema.pre('findOne', async function (next){
-  this.find({isDeleted: {$ne: true}});
-  next();
-})
-
-userSchema.set('toJSON', {
-  transform: function(doc, ret){
-    delete ret.password
-    return ret
+  if (data.password === "") {
+    next();
   }
-})
+
+  data.password = await bcrypt.hash(data.password, Number(config.salt_rounds));
+  next();
+});
+
+userSchema.pre("find", async function (next) {
+  this.find({ isDeleted: { $ne: true } });
+  next();
+});
+userSchema.pre("findOne", async function (next) {
+  this.find({ isDeleted: { $ne: true } });
+  next();
+});
+
+userSchema.set("toJSON", {
+  transform: function (doc, ret) {
+    delete ret.password;
+    return ret;
+  },
+});
 
 const User = model<TUser>("user", userSchema);
 
