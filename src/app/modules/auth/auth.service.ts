@@ -5,7 +5,7 @@ import bcrypt from "bcrypt";
 import { createToken } from "./auth.utils";
 import config from "../../config";
 import httpStatus from "http-status";
-import jwt, { JwtPayload } from 'jsonwebtoken'
+import jwt, { decode, JwtPayload } from 'jsonwebtoken'
 
 const loginUserIntoDB = async (payload: TLogin) => {
   const user = await User.findOne({ email: payload.email }).select("+password");
@@ -55,10 +55,12 @@ const refreshToken = async (token: string) => {
     config.refresh_secret as string
   ) as JwtPayload;
 
-  const { email, iat } = decoded;
-
+  
+  const { userId, iat } = decoded;
+  
   // checking if the user is exist
-  const user = await User.findOne({email});
+  const user = await User.findById(userId);
+
 
   if (!user) {
     throw new AppError(httpStatus.NOT_FOUND, 'This user is not found!');
@@ -69,7 +71,7 @@ const refreshToken = async (token: string) => {
     role: user.role,
   };
 
-  const accessToken = createToken(
+  const accessToken  = createToken(
     jwtPayload,
     config.access_secret as string,
     config.expires_in as string

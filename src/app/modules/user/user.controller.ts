@@ -7,8 +7,8 @@ import httpStatus from "http-status";
 const createUser = catchAsync(async (req, res) => {
   const result = await UserServices.createUserIntoDB(req.body);
 
-  res.cookie('access-token', result.accessToken)
-  res.cookie('refresh-token', result.refreshToken)
+  res.cookie("access-token", result.accessToken);
+  res.cookie("refresh-token", result.refreshToken);
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
@@ -18,11 +18,9 @@ const createUser = catchAsync(async (req, res) => {
   });
 });
 
-
 // creating user by admin
 const createUserByAdmin = catchAsync(async (req, res) => {
   const result = await UserServices.createUserByAdminIntoDB(req.body);
-
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
@@ -36,7 +34,6 @@ const createUserByAdmin = catchAsync(async (req, res) => {
 const getAllUser = catchAsync(async (req, res) => {
   const result = await UserServices.getAllUserFromDB(req.query);
 
-
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
@@ -45,11 +42,9 @@ const getAllUser = catchAsync(async (req, res) => {
   });
 });
 
-
 // getting a single user data using id
 const getSingleUser = catchAsync(async (req, res) => {
   const result = await UserServices.getSingleUserFromDB(req.params.id);
-
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
@@ -59,11 +54,9 @@ const getSingleUser = catchAsync(async (req, res) => {
   });
 });
 
-
 // updating a single user data using id and it's new data
 const updateUser = catchAsync(async (req, res) => {
   const result = await UserServices.updateUserIntoDB(req);
-
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
@@ -77,7 +70,6 @@ const updateUser = catchAsync(async (req, res) => {
 const deleteUser = catchAsync(async (req, res) => {
   const result = await UserServices.deleteUserFromDB(req.params.id);
 
-
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
@@ -86,7 +78,6 @@ const deleteUser = catchAsync(async (req, res) => {
   });
 });
 
-
 // exporting all controllers
 export const UserController = {
   createUser,
@@ -94,6 +85,5 @@ export const UserController = {
   getAllUser,
   getSingleUser,
   updateUser,
-  deleteUser
-  
+  deleteUser,
 };
