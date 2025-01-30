@@ -7,14 +7,20 @@ import { productSearchFields } from "./product.constant";
 
 // creating product into db
 const createProductIntoDB = async (payload: TProduct) => {
+  const isProductExists = await Product.findOne({name: payload.name});
+
+  if(isProductExists){
+    throw new AppError(httpStatus.NOT_IMPLEMENTED, "Product is already exists");
+  }
   const result = await Product.create(payload);
   return result;
 };
 
 // getting all product from db
 const getAllProductFromDB = async (query: Record<string, unknown>) => {
+  console.log(query)
   const productQuery = new QueryBuilder(
-    Product.find({ isDeleted: { $ne: true } }).populate("category"),
+    Product.find(),
     query
   )
     .search(productSearchFields)
@@ -26,7 +32,9 @@ const getAllProductFromDB = async (query: Record<string, unknown>) => {
 };
 
 const getSingleProductFromDB = async (id: string) => {
-  const result = await Product.findById(id).find({ isDeleted: { $ne: true } });
+  const result = await Product.findById(id)
+    .find({ isDeleted: { $ne: true } })
+    .populate("category");
   return result;
 };
 

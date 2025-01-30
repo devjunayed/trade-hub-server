@@ -10,13 +10,14 @@ class QueryBuilder<T> {
   }
 
   search(searchableFields: string[]) {
-    const search = this.query.search;
-    if (search) {
+    
+    const searchTerm = this.query.searchTerm;
+    if (searchTerm !== undefined && searchTerm && searchTerm !== "") {
       this.modelQuery = this.modelQuery.find({
         $or: searchableFields.map(
           (field) =>
             ({
-              [field]: { $regex: search, $options: "i" },
+              [field]: { $regex: searchTerm, $options: "i" },
             } as FilterQuery<T>)
         ),
       });
