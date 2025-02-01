@@ -5,7 +5,7 @@ import bcrypt from "bcrypt";
 import { createToken } from "./auth.utils";
 import config from "../../config";
 import httpStatus from "http-status";
-import jwt, { decode, JwtPayload } from 'jsonwebtoken'
+import jwt, { decode, JwtPayload, SignOptions } from 'jsonwebtoken'
 
 const loginUserIntoDB = async (payload: TLogin) => {
   const user = await User.findOne({ email: payload.email }).select("+password");
@@ -32,12 +32,12 @@ const loginUserIntoDB = async (payload: TLogin) => {
   const accessToken = createToken(
     jwtPayload,
     config.access_secret as string,
-    config.expires_in as string
+    config.expires_in as SignOptions["expiresIn"]
   );
   const refreshToken = createToken(
     jwtPayload,
     config.refresh_secret as string,
-    config.refresh_expires_in as string
+    config.refresh_expires_in as SignOptions["expiresIn"]
   );
 
   user.password = "";
@@ -74,7 +74,7 @@ const refreshToken = async (token: string) => {
   const accessToken  = createToken(
     jwtPayload,
     config.access_secret as string,
-    config.expires_in as string
+    config.expires_in as SignOptions["expiresIn"]
   );
 
   return {

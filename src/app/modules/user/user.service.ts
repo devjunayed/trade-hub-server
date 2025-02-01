@@ -8,6 +8,7 @@ import { userSearchFields } from "./user.constant";
 import { createToken } from "../auth/auth.utils";
 import config from "../../config";
 import bcrypt from 'bcrypt'
+import { SignOptions } from "jsonwebtoken";
 
 // Creating user into db
 const createUserIntoDB = async (payload: TUser) => {
@@ -43,12 +44,12 @@ const createUserIntoDB = async (payload: TUser) => {
   const accessToken = createToken(
     jwtPayload,
     config.access_secret as string,
-    config.expires_in as string
+    config.expires_in as SignOptions["expiresIn"]
   );
   const refreshToken = createToken(
     jwtPayload,
     config.refresh_secret as string,
-    config.refresh_expires_in as string
+    config.refresh_expires_in as SignOptions["expiresIn"]
   );
 
   return {name: result.name, userId: result._id, accessToken, refreshToken };
