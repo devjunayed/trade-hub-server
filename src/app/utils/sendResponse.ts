@@ -7,16 +7,18 @@ type TResponse<T> = {
   token?: string;
   message: string;
   data: T;
+  meta?: unknown;
 };
 export function sendResponse<T>(
   res: Response,
-  { statusCode, success, token, message, data }: TResponse<T>
+  { statusCode, success, token, message, data, meta }: TResponse<T>
 ) {
   const responseData: TResponse<T> = {
     success,
     statusCode,
     message,
     data,
+    meta
   };
 
   if (token) {

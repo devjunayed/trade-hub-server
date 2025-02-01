@@ -7,9 +7,9 @@ import { productSearchFields } from "./product.constant";
 
 // creating product into db
 const createProductIntoDB = async (payload: TProduct) => {
-  const isProductExists = await Product.findOne({name: payload.name});
+  const isProductExists = await Product.findOne({ name: payload.name });
 
-  if(isProductExists){
+  if (isProductExists) {
     throw new AppError(httpStatus.NOT_IMPLEMENTED, "Product is already exists");
   }
   const result = await Product.create(payload);
@@ -18,17 +18,18 @@ const createProductIntoDB = async (payload: TProduct) => {
 
 // getting all product from db
 const getAllProductFromDB = async (query: Record<string, unknown>) => {
-  console.log(query)
+  console.log(query);
   const productQuery = new QueryBuilder(
-    Product.find(),
+    Product.find({ isDeleted: { $ne: true } }),
     query
   )
     .search(productSearchFields)
     .filter()
+    .sort()
     .paginate();
-  const result = await productQuery.modelQuery;
-  console.log(result);
-  return result;
+  const data = await productQuery.modelQuery;
+  const meta = await productQuery.countTotal();
+  return { data, meta };
 };
 
 const getSingleProductFromDB = async (id: string) => {
