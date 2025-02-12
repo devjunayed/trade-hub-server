@@ -6,5 +6,6 @@ import { TRole } from "../user/user.interface";
 const router = Router();
 
 router.post("/", auth(TRole.USER), OrderControllers.createOrder)
+router.post("/", auth(TRole.ADMIN), OrderControllers.getAllOrders)
 
 export const OrderRoutes = router;

@@ -4,6 +4,7 @@ import { TOrderProducts } from "./order.interface";
 import User from "../user/user.model";
 import { initiatePayment } from "../payment/payment.utils";
 import Order from "./order.model";
+import QueryBuilder from "../../builder/QueryBuilder";
 
 const createOrderIntoDb = async (req: Request) => {
   const userId = req?.user?.userId;
@@ -53,6 +54,22 @@ const createOrderIntoDb = async (req: Request) => {
   return { result, paymentResponse };
 };
 
+const getAllOrderFromDb = async (query: Record<string, unknown>) => {
+  const orderQuery = new QueryBuilder(
+    Order.find({ isDeleted: { $ne: true } }).populate("productId"),
+    query
+  )
+    .search(["productId", "name", "description", "transactionId"])
+    .filter()
+    .sort()
+    .paginate();
+
+  const data = await orderQuery.modelQuery;
+  const meta = await orderQuery.countTotal();
+  return { data, meta };
+};
+
 export const OrderServices = {
   createOrderIntoDb,
+  getAllOrderFromDb
 };

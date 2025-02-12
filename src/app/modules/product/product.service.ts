@@ -20,7 +20,7 @@ const createProductIntoDB = async (payload: TProduct) => {
 const getAllProductFromDB = async (query: Record<string, unknown>) => {
   console.log(query);
   const productQuery = new QueryBuilder(
-    Product.find({ isDeleted: { $ne: true } }),
+    Product.find({ isDeleted: { $ne: true } }).populate("category"),
     query
   )
     .search(productSearchFields)
