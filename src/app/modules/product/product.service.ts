@@ -18,7 +18,6 @@ const createProductIntoDB = async (payload: TProduct) => {
 
 // getting all product from db
 const getAllProductFromDB = async (query: Record<string, unknown>) => {
-  console.log(query);
   const productQuery = new QueryBuilder(
     Product.find({ isDeleted: { $ne: true } }).populate("category"),
     query

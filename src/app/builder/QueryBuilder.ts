@@ -34,7 +34,6 @@ class QueryBuilder<T> {
     excludeFields.forEach((el) => delete queryObj[el]);
 
     if(queryObj && queryObj.category === ""){
-      console.log({queryObj})
       return this;
     }
     this.modelQuery = this.modelQuery.find(queryObj as FilterQuery<T>);

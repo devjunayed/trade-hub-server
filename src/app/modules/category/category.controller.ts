@@ -6,7 +6,6 @@ import { CategoryServices } from "./category.service";
 
 // creating user
 const createCategory = catchAsync(async (req, res) => {
-  console.log('hitting');
   const result = await CategoryServices.createCategoryIntoDB(req.body);
 
 
