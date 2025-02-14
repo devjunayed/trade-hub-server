@@ -63,10 +63,16 @@ const confirmationService = async (transactionId: string, status: string) => {
     </tr>`;
   }
 
+  const serviceChargeTable = `<tr><td>Delivery Charge</td><td>${result.deliveryCharge}</td></tr>`;
+
+  const priceWithCharge =
+    Number(result.totalPrice) + Number(result.deliveryCharge);
+
   template = template.replace("{{message}}", message);
   template = template.replace("{{trxId}}", transactionId);
   template = template.replace("{{productDetail}}", productsTable);
-  template = template.replace("{{cost}}", `${result.totalPrice}`);
+  template = template.replace("{{serviceCharge}}", serviceChargeTable);
+  template = template.replace("{{cost}}", `${priceWithCharge}`);
 
   return template;
 };

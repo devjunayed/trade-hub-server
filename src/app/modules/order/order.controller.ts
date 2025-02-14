@@ -14,7 +14,7 @@ const createOrder = catchAsync(async(req: Request, res: Response) => {
       statusCode: httpStatus.OK,
       success: true,
       message: "Order placed successfully!",
-      data: {...data.result.toJSON(), paymentURL: data.paymentResponse}
+      data: {...data?.result?.toJSON(), paymentURL: data.paymentResponse}
     });
 })
 

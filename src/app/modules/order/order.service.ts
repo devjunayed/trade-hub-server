@@ -7,7 +7,10 @@ import Order from "./order.model";
 import QueryBuilder from "../../builder/QueryBuilder";
 
 const createOrderIntoDb = async (req: Request) => {
+  let result = null;
+  let paymentResponse = "";
   const userId = req?.user?.userId;
+  const orderInfo = req.body;
 
   //   finding user
   const user = await User.findById(userId);
@@ -19,11 +22,13 @@ const createOrderIntoDb = async (req: Request) => {
     })),
   });
 
+  // caculating total price from backend
   const totalPrice = req.body.products.reduce(
     (acc: number, product: TOrderProducts) => {
       const matchedProduct = products.find(
         (p) => p._id.toString() === product.productId
       );
+
       return matchedProduct
         ? acc + matchedProduct.price * product.quantity
         : acc;
@@ -31,25 +36,35 @@ const createOrderIntoDb = async (req: Request) => {
     0
   );
 
-  //    transaction id
-  const transactionId = `TXN-${Date.now()}`;
-  const paymentData = {
-    transactionId,
-    totalPrice,
-    customerName: user?.name,
-    customerEmail: user?.email,
-    customerPhone: user?.phone,
-    customerAddress: user?.address,
-  };
+  // assinging userId and calculating totalPrice after delivery charge
+  orderInfo.userId = userId;
+  orderInfo.totalPrice = totalPrice + orderInfo.deliveryCharge;
 
-  const paymentResponse = await initiatePayment(paymentData);
+  if (orderInfo.paymentMethod === "manual") {
+    result = await Order.create(orderInfo);
+  }
 
-  const result = await Order.create({
-    userId,
-    transactionId,
-    ...req.body,
-    totalPrice,
-  });
+  if (orderInfo.paymentMethod === "automatic") {
+    const transactionId = `TXN-${Date.now()}`;
+    const paymentData = {
+      transactionId,
+      totalPrice: orderInfo.totalPrice,
+      customerName: orderInfo.name,
+      customerEmail: orderInfo?.email,
+      customerPhone: orderInfo?.phone,
+      customerAddress: orderInfo?.address,
+    };
+
+    paymentResponse = await initiatePayment(paymentData);
+
+    result = await Order.create({
+      userId,
+      transactionId,
+      ...req.body,
+      totalPrice,
+    });
+  }
+
 
   return { result, paymentResponse };
 };
@@ -71,5 +86,5 @@ const getAllOrderFromDb = async (query: Record<string, unknown>) => {
 
 export const OrderServices = {
   createOrderIntoDb,
-  getAllOrderFromDb
+  getAllOrderFromDb,
 };
