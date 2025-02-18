@@ -1,5 +1,7 @@
+import { Types } from "mongoose";
+
 export type TOrderProducts = {
-  productId: string;
+  productId: Types.ObjectId;
   quantity: number;
 };
 

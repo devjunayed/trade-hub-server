@@ -5,6 +5,8 @@ import User from "../user/user.model";
 import { initiatePayment } from "../payment/payment.utils";
 import Order from "./order.model";
 import QueryBuilder from "../../builder/QueryBuilder";
+import AppError from "../../errors/AppError";
+import httpStatus from "http-status";
 
 const createOrderIntoDb = async (req: Request) => {
   let result = null;
@@ -26,7 +28,7 @@ const createOrderIntoDb = async (req: Request) => {
   const totalPrice = req.body.products.reduce(
     (acc: number, product: TOrderProducts) => {
       const matchedProduct = products.find(
-        (p) => p._id.toString() === product.productId
+        (p) => p._id.toString() === product.productId.toString()
       );
 
       return matchedProduct
@@ -68,7 +70,6 @@ const createOrderIntoDb = async (req: Request) => {
 
   return { result, paymentResponse };
 };
-
 const getAllOrderFromDb = async (query: Record<string, unknown>) => {
   const orderQuery = new QueryBuilder(
     Order.find({ isDeleted: { $ne: true } }).populate("productId"),
@@ -84,7 +85,33 @@ const getAllOrderFromDb = async (query: Record<string, unknown>) => {
   return { data, meta };
 };
 
+const getUsersAllOrderFromDb = async (req: Request) => {
+  const userId = req?.user?.userId;
+
+  if(!userId || userId === undefined){
+   throw new AppError(httpStatus.UNAUTHORIZED, "Invalid user");
+  }
+
+ 
+
+  const orderQuery = new QueryBuilder(
+    Order.find( {userId: userId, isDeleted: { $ne: true } }).populate("products.productId"),
+    req.query
+  )
+    .search(["productId", "name", "description", "transactionId"])
+    .filter()
+    .sort()
+    .paginate();
+
+  const data = await orderQuery.modelQuery;
+  const meta = await orderQuery.countTotal();
+
+  return { data, meta };
+};
+
+
 export const OrderServices = {
   createOrderIntoDb,
   getAllOrderFromDb,
+  getUsersAllOrderFromDb
 };
