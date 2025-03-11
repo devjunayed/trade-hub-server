@@ -14,6 +14,9 @@ const orderStatsController = catchAsync(async (req, res) => {
     meta: {
       totalOrders: result.totalOrders,
       totalRevenue: result.totalRevenue,
+      totalProducts: result.totalProducts,
+      totalUsers: result.totalUsers,
+      totalVisitors: result.totalVisitors,
     }
   });
 });

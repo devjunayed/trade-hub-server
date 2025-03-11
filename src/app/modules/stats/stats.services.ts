@@ -1,4 +1,6 @@
 import Order from "../order/order.model";
+import Product from "../product/product.model";
+import { UiConfig } from "../uiconfig/uiconfig.model";
 import User from "../user/user.model";
 
 const orderStatsService = async () => {
@@ -54,14 +56,22 @@ const orderStatsService = async () => {
       },
     },
     {
-
       $project: { _id: 0, totalRevenue: 1 },
-    }
-  ])
+    },
+  ]);
 
-  console.log(totalRevenue)
+  const totalUsers = await User.countDocuments();
+  const totalProducts = await Product.countDocuments();
+  const totalVisitors = await UiConfig.find().select("views");
 
-  return {data, totalOrders, totalRevenue: totalRevenue[0].totalRevenue};
+  return {
+    data,
+    totalOrders,
+    totalProducts,
+    totalUsers,
+    totalRevenue: totalRevenue[0].totalRevenue,
+    totalVisitors: totalVisitors[0].views,
+  };
 };
 
 const usersStatsService = async () => {
