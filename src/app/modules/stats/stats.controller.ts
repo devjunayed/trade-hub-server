@@ -13,7 +13,18 @@ const orderStatsController = catchAsync(async (req, res) => {
     data: result,
   });
 });
+const usersStatsController = catchAsync(async (req, res) => {
+  const result = await StatsServices.usersStatsService();
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: "Users Stats fetched!",
+    data: result,
+  });
+});
 
 export const StatsControllers = {
   orderStatsController,
+  usersStatsController
 };
