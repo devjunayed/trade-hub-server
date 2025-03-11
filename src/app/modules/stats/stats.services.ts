@@ -25,13 +25,13 @@ const orderStatsService = async () => {
   ]);
 
   // Ensure all 30 days exist in the data
-  const result: { date: string; orderCount: number }[] = [];
+  const data: { date: string; orderCount: number }[] = [];
   for (let i = 0; i < 30; i++) {
     const date = new Date(past30Days);
     date.setDate(date.getDate() + i);
     const dateString = date.toISOString().split("T")[0]; // Format YYYY-MM-DD
 
-    result.push({
+    data.push({
       date: dateString,
       orderCount: 0, // Default order count
     });
@@ -39,14 +39,31 @@ const orderStatsService = async () => {
 
   // Fill in actual counts from aggregation
   orderCounts.forEach(({ date, orderCount }) => {
-    const index = result.findIndex((item) => item.date === date);
+    const index = data.findIndex((item) => item.date === date);
     if (index !== -1) {
-      result[index].orderCount = orderCount;
+      data[index].orderCount = orderCount;
     }
   });
 
-  return result;
+  const totalOrders = await Order.countDocuments();
+  const totalRevenue = await Order.aggregate([
+    {
+      $group: {
+        _id: null,
+        totalRevenue: { $sum: "$totalPrice" },
+      },
+    },
+    {
+
+      $project: { _id: 0, totalRevenue: 1 },
+    }
+  ])
+
+  console.log(totalRevenue)
+
+  return {data, totalOrders, totalRevenue: totalRevenue[0].totalRevenue};
 };
+
 const usersStatsService = async () => {
   const now = new Date();
   const firstDay = new Date(now.getFullYear(), now.getMonth() - 1, 1);

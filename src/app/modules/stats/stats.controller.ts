@@ -10,7 +10,11 @@ const orderStatsController = catchAsync(async (req, res) => {
     statusCode: httpStatus.OK,
     success: true,
     message: "All order retrieved successfully!",
-    data: result,
+    data: result.data,
+    meta: {
+      totalOrders: result.totalOrders,
+      totalRevenue: result.totalRevenue,
+    }
   });
 });
 const usersStatsController = catchAsync(async (req, res) => {
