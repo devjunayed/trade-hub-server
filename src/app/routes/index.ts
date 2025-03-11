@@ -5,6 +5,7 @@ import { CategoryRoutes } from "../modules/category/category.route";
 import { ProductRoutes } from "../modules/product/product.route";
 import { OrderRoutes } from "../modules/order/order.route";
 import { paymentRoutes } from "../modules/payment/payment.route";
+import { StatsRoutes } from "../modules/stats/stats.route";
 
 const router = Router();
 
@@ -15,6 +16,7 @@ const routes = [
   { path: "/product", route: ProductRoutes },
   { path: "/order", route: OrderRoutes },
   { path: "/payment", route: paymentRoutes },
+  { path: "/stats", route: StatsRoutes },
 ];
 
 routes.forEach((route) => router.use(route.path, route.route));

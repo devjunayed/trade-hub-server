@@ -33,7 +33,7 @@ const getUsersAllOrders = catchAsync(async (req, res) => {
 const getAllOrders = catchAsync(async (req, res) => {
 
   const result = await OrderServices.getAllOrderFromDb(req.query);
-
+  console.log(result)
 
   sendResponse(res, {
     statusCode: httpStatus.OK,

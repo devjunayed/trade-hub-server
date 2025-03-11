@@ -72,15 +72,17 @@ const createOrderIntoDb = async (req: Request) => {
 };
 const getAllOrderFromDb = async (query: Record<string, unknown>) => {
   const orderQuery = new QueryBuilder(
-    Order.find({ isDeleted: { $ne: true } }).populate("productId"),
+    Order.find({ isDeleted: { $ne: true } }).populate("products.productId"),
     query
   )
-    .search(["productId", "name", "description", "transactionId"])
+    .search(["transactionId"])
     .filter()
     .sort()
     .paginate();
 
   const data = await orderQuery.modelQuery;
+
+  console.log(data)
   const meta = await orderQuery.countTotal();
   return { data, meta };
 };

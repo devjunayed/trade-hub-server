@@ -11,7 +11,9 @@ class QueryBuilder<T> {
 
   search(searchableFields: string[]) {
     const searchTerm = this?.query?.searchTerm;
-    if (searchTerm !== undefined && searchTerm && searchTerm !== "") {
+    console.log(typeof searchTerm);
+    if ( searchTerm !== "" && searchTerm && searchTerm !== undefined) {
+      console.log("hitting search")
       this.modelQuery = this.modelQuery.find({
         $or: searchableFields.map(
           (field) =>
