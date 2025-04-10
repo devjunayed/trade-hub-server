@@ -22,23 +22,19 @@ const bannerSchema = new Schema<Tbanner>({
 const uiConfigSchema = new Schema<TUiConfig>({
     lightLogoUrl: {
         type: String,
-        required: true,
     },
     darkLogoUrl: {
         type: String,
-        required: true, 
     },
     banners: {
         type: [bannerSchema],
-        required: true,
     },
     isDeveloperModeOn: {
         type: Boolean,
-        required: true,
     },
     views: {
         type: Number,
-        required: true,
+        default: 0
     }
 })
 
