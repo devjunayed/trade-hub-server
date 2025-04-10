@@ -6,7 +6,7 @@ import { TRole } from "../user/user.interface";
 const router = Router();
 
 router.post("/", auth(TRole.USER), OrderControllers.createOrder)
-router.get("/", auth(TRole.ADMIN), OrderControllers.getAllOrders)
+router.get("/", OrderControllers.getAllOrders)
 router.get("/user-orders", auth(TRole.USER), OrderControllers.getUsersAllOrders)
 
 export const OrderRoutes = router;

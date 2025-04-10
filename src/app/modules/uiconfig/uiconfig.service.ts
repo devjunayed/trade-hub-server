@@ -1,5 +1,7 @@
 import { UiConfig } from "./uiconfig.model";
 
+
+
 const increaseSiteViewCountIntoDb = async () => {
     const uiconfig = await UiConfig.find();
     if (uiconfig.length === 0) {

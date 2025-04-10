@@ -82,8 +82,8 @@ const getAllOrderFromDb = async (query: Record<string, unknown>) => {
 
   const data = await orderQuery.modelQuery;
 
-  console.log(data)
   const meta = await orderQuery.countTotal();
+  console.log(meta)
   return { data, meta };
 };
 
