@@ -1,6 +1,14 @@
 import { UiConfig } from "./uiconfig.model";
 
-
+const updateSettingsIntoDB = async(settings: any) => {
+    const uiconfig = await UiConfig.findOne({});
+    if (uiconfig) {
+        await UiConfig.updateOne({}, { $set: settings });
+    } else {
+        await UiConfig.create(settings);
+    }
+    return uiconfig;
+}
 
 const increaseSiteViewCountIntoDb = async () => {
     const uiconfig = await UiConfig.find();
@@ -14,5 +22,6 @@ const increaseSiteViewCountIntoDb = async () => {
 }
 
 export const UiConfigServices = {
-    increaseSiteViewCountIntoDb
+    increaseSiteViewCountIntoDb,
+    updateSettingsIntoDB
 }

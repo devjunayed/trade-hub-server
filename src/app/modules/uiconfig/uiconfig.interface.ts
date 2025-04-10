@@ -1,4 +1,4 @@
-interface banner{
+interface Tbanner{
     imageUrl: string;
     link: string;
     title: string;
@@ -7,6 +7,7 @@ interface banner{
 interface TUiConfig  {
     lightLogoUrl: string;
     darkLogoUrl: string;
-    banners: banner[];
+    banners: Tbanner[];
+    isDeveloperModeOn: boolean;
     views: number;
 }
