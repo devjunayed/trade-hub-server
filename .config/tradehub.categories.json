@@ -1,0 +1,90 @@
+[{
+  "_id": {
+    "$oid": "6797a2e2e9050bb2e6f2e3c5"
+  },
+  "title": "Mobile Phones",
+  "description": "Discover the latest smartphones with cutting-edge technology.",
+  "isDeleted": false,
+  "createdAt": {
+    "$date": "2025-01-27T15:14:42.884Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-27T15:14:42.884Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6797a2f7e9050bb2e6f2e3cb"
+  },
+  "title": "Laptops & Computers",
+  "description": "Explore high-performance laptops and PCs for work and play.",
+  "isDeleted": false,
+  "createdAt": {
+    "$date": "2025-01-27T15:15:03.898Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-27T15:15:03.898Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6797a308e9050bb2e6f2e3ce"
+  },
+  "title": "Cameras & Accessories",
+  "description": "Find premium cameras and must-have accessories for every shot.\"",
+  "isDeleted": false,
+  "createdAt": {
+    "$date": "2025-01-27T15:15:20.550Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-27T15:15:20.550Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6797a31be9050bb2e6f2e3d1"
+  },
+  "title": "Audio Devices",
+  "description": "Shop headphones, speakers, and audio gear for every audiophile.",
+  "isDeleted": false,
+  "createdAt": {
+    "$date": "2025-01-27T15:15:39.495Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-27T15:15:39.495Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6797a329e9050bb2e6f2e3d4"
+  },
+  "title": "Wearable Technology",
+  "description": "Track your health and stay connected with the latest wearables.",
+  "isDeleted": false,
+  "createdAt": {
+    "$date": "2025-01-27T15:15:53.094Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-27T15:15:53.094Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6797a338e9050bb2e6f2e3d7"
+  },
+  "title": "Gaming Consoles & Accessories",
+  "description": "Discover top consoles, controllers, and gaming essentials.",
+  "isDeleted": false,
+  "createdAt": {
+    "$date": "2025-01-27T15:16:08.072Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-27T15:16:08.072Z"
+  },
+  "__v": 0
+}]

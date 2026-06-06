@@ -1,0 +1,76 @@
+[{
+  "_id": {
+    "$oid": "679e3260237b5a9ca76347e1"
+  },
+  "name": "Md Junayed",
+  "email": "admin@gmail.com",
+  "address": "Korigaon, Lowhajong, Munshiganj",
+  "password": "$2b$12$aNuqkl.DN6shagrHmKySxuCqOeniu6ccmmsVB6KFGWoj9d9y44ALy",
+  "isDeleted": false,
+  "phone": "01814676613",
+  "role": "admin",
+  "createdAt": {
+    "$date": "2025-02-01T14:40:32.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-01T14:40:32.117Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679f5ce20656f35c1f102adc"
+  },
+  "name": "Md Junayed",
+  "email": "user@gmail.com",
+  "address": "somewhere, nowhere",
+  "password": "$2b$12$DZu.HOmuH0vxE0NQVndGTuQROqFz0wvk0qWf7rVhyZVHflm1PMDde",
+  "isDeleted": false,
+  "phone": "01814676613",
+  "role": "user",
+  "createdAt": {
+    "$date": "2025-02-02T11:54:10.107Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-02T11:54:10.107Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679f5e8742d091d7420e1e87"
+  },
+  "name": "Sabbir",
+  "email": "sabbir@gmail.com",
+  "address": "Narayanganj",
+  "password": "$2b$12$Ml5o/tyDA13SPH4iztcSy.AbiIF5dcq9wTmvyPyBZdkN31dmAyhP.",
+  "isDeleted": false,
+  "phone": "01814676613",
+  "role": "user",
+  "createdAt": {
+    "$date": "2025-02-02T12:01:11.672Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-02T12:01:11.672Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679f5f7942d091d7420e1e97"
+  },
+  "name": "Fahim",
+  "email": "fahim@gmail.com",
+  "address": "Chadpur",
+  "password": "$2b$12$ozVQnDT1zduLL68x4qT.9eLXRKMt0LCt0Aj59QoDW/KT7DKWNOSK.",
+  "isDeleted": false,
+  "phone": "01814676613",
+  "role": "user",
+  "createdAt": {
+    "$date": "2025-02-02T12:05:13.244Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-02T12:05:13.244Z"
+  },
+  "__v": 0
+}]

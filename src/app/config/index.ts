@@ -15,5 +15,6 @@ export default {
     refresh_expires_in: process.env.REFRESH_EXPIRES_IN,
     server_api: process.env.SERVER_API,
     store_id: process.env.STORE_ID,
-    store_pass: process.env.STORE_PASS
+    store_pass: process.env.STORE_PASS,
+    origin_url: process.env.ORIGIN_URL
 }

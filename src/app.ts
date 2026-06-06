@@ -8,21 +8,27 @@ import cors from "cors";
 import globalErrorHandler from "./app/middlewares/globalErrorHandler";
 import cookieParser from "cookie-parser";
 import notFound from "./app/middlewares/notFound";
+import config from "./app/config";
 
 const app: Application = express();
 
-
 // getting data as json
 app.use(express.json());
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({ extended: true }));
 
 // use cors
-app.use( cors({
-  credentials: true,
-  origin: ["http://localhost:3000", "https://tradehub.devjunayed.xyz"],
-}));
+app.use(
+  cors({
+    credentials: true,
+    origin: [
+      "http://localhost:3000",
+      "https://tradehub.devjunayed.xyz",
+      config.origin_url as string,
+    ],
+  }),
+);
 
-app.use(cookieParser())
+app.use(cookieParser());
 
 app.use("/api/v1/", router);
 
@@ -31,9 +37,6 @@ app.get("/", (req, res) => {
     message: "Hallo, Server is working",
   });
 });
-
-
-
 
 app.use(globalErrorHandler);
 app.use(notFound);

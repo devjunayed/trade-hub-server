@@ -3,6 +3,7 @@ import { readFileSync } from "fs";
 import Order from "../order/order.model";
 import { TProduct } from "../product/product.interface";
 import Product from "../product/product.model";
+import config from "../../config";
 
 const confirmationService = async (transactionId: string, status: string) => {
   let message = "";
@@ -73,6 +74,7 @@ const confirmationService = async (transactionId: string, status: string) => {
   template = template.replace("{{productDetail}}", productsTable);
   template = template.replace("{{serviceCharge}}", serviceChargeTable);
   template = template.replace("{{cost}}", `${priceWithCharge}`);
+  template = template.replace("{{frontendUrl}}", `${config.origin_url}`);
 
   return template;
 };

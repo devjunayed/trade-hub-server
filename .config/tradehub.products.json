@@ -1,0 +1,347 @@
+[{
+  "_id": {
+    "$oid": "679b022127cc75996629de45"
+  },
+  "name": "Galaxy S25 Plus",
+  "description": "Here's a detailed description based on the provided specifications:    ---  ### **Samsung Galaxy S25 Plus – Overview**    The **Samsung Galaxy S25 Plus** is a flagship smartphone, officially released on **February 3, 2025**. Built with premium materials, it features a **glass front and back (Gorilla Glass Victus 2) with an aluminum frame**, ensuring durability and a sleek design. It is **IP68-certified**, making it resistant to water (up to 1.5m for 30 minutes) and dust.    #### **Display & Design**   The Galaxy S25 Plus boasts a **6.7-inch Dynamic LTPO AMOLED 2X display** with a **QHD+ resolution (1440x3120 pixels)** and a **120Hz refresh rate** for ultra-smooth performance. The **2600 nits peak brightness** ensures excellent visibility even in bright outdoor conditions, and **HDR10+ support** enhances the dynamic range for vibrant visuals. The **91.8% screen-to-body ratio** with a **punch-hole design** offers an immersive viewing experience.    #### **Performance & Software**   Powered by the latest **Qualcomm SM8750-AB Snapdragon 8 Elite chipset** (3nm fabrication), the device features an **Octa-core CPU (2x4.47 GHz & 6x3.53 GHz)** for top-tier performance. The **Adreno 830 GPU** ensures smooth gaming and graphics rendering. Running on **Android 15 with One UI 7**, the phone delivers a seamless and intuitive user experience.    #### **Camera System**   The **triple-camera setup** consists of:   - **50 MP (f/1.8) primary sensor** with **Dual Pixel PDAF** and **OIS**   - **10 MP (f/2.4) telephoto lens** for detailed zoom shots   - **12 MP (f/2.2) ultra-wide camera** for expansive shots    It supports **8K, 4K, and 1080p video recording**, with features like **HDR, Pro Mode, Dual Video Recording, Slo-Motion, and Bokeh Portrait Video**. The **12 MP front camera** with **Dual Pixel Autofocus** captures stunning selfies and records up to **4K 60fps** videos.    #### **Battery & Charging**   Equipped with a **4900mAh battery**, the S25 Plus supports **45W fast wired charging (PD 3.0, 65% in 30 min)**, **15W wireless charging (Qi2 standard)**, and **4.5W reverse wireless charging** for charging other devices.    #### **Storage & Connectivity**   With **256GB UFS 4.0 internal storage and 12GB RAM**, the phone ensures fast data access and multitasking. Connectivity options include **Wi-Fi 7, Bluetooth 5.4, 5G, NFC, USB Type-C 3.2 (with DisplayPort 1.2), and dual SIM (Nano + eSIM)**.    #### **Security & Sensors**   For security, it features an **ultrasonic in-display fingerprint sensor** and **face unlock**. Additional sensors include an **accelerometer, gyroscope, proximity sensor, barometer, and compass**.    #### **Multimedia & Features**   The S25 Plus offers **stereo speakers with high-fidelity audio**, **Samsung DeX** and **Wireless DeX** for a PC-like experience, and **Ultra-Wideband (UWB) support** for enhanced connectivity.    ### **Conclusion**   The **Samsung Galaxy S25 Plus** is a premium flagship offering **top-tier performance, an outstanding camera system, an ultra-bright display, and cutting-edge features**. With **5G connectivity, IP68 water resistance, and powerful hardware**, it’s designed for users who demand **power, style, and innovation** in a smartphone.",
+  "price": 181999,
+  "stockQuantity": 9,
+  "category": {
+    "$oid": "6797a2e2e9050bb2e6f2e3c5"
+  },
+  "productImages": [
+    "https://i.ibb.co.com/KxPBWGDW/samsung-galaxy-s25-plus-full-display-size-image.webp",
+    "https://i.ibb.co.com/b5XFnwjc/samsung-galaxy-s25-plus-full-back-camera-side-image.webp",
+    "https://i.ibb.co.com/Xf2dSBv4/samsung-galaxy-s25-plus-back-side-image.webp",
+    "https://i.ibb.co.com/xS8PnsNS/samsung-galaxy-s25-plus-side-image.webp",
+    "https://i.ibb.co.com/Txwkbd3w/samsung-galaxy-s25-plus-full-back-side-image.webp",
+    "https://i.ibb.co.com/TxWw9hDM/samsung-galaxy-s25-plus-power-button-side-image.webp"
+  ],
+  "isDeleted": false,
+  "createdAt": {
+    "$date": "2025-01-30T04:37:53.073Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-30T04:37:53.073Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679b10ee89b52a2eb91c550a"
+  },
+  "name": "Samsung Galaxy S25 Ultra",
+  "description": "The Samsung Galaxy S25 Ultra is poised to be a standout in the smartphone market with its impressive array of features and cutting-edge technology. The device boasts a 6.9-inch Dynamic LTPO AMOLED 2X display with a resolution of 1440 x 3120 pixels, offering vibrant colors and sharp details. Powered by the Qualcomm Snapdragon 8 Elite (3 nm) chipset.  One of the key highlights of the Galaxy S25 Ultra is its advanced camera system. It features a quad-camera setup with a 200MP main sensor, complemented by 10 MP telephoto, 50 MP periscope telephoto, and 50 MP ultrawide lenses. This setup allows for versatile photography, from detailed close-ups to expansive landscapes. The device also supports 8K video recording, making it a powerful tool for content creators.  In terms of design, the Galaxy S25 Ultra is built with a titanium frame and Corning Gorilla Armor 2 for durability. It includes a 5000mAh battery with 45W wired and 25W wireless charging capabilities, ensuring long-lasting power and quick recharges. Running on Android 15 with One UI 7, the phone offers a smooth and intuitive user experience, complete with up to seven major Android upgrades. The Samsung Galaxy S25 Ultra price in Bangladesh is BDT 236,999 (Official) for 12GB of RAM and 256GB of phone storage.",
+  "price": 236999,
+  "stockQuantity": 20,
+  "category": {
+    "$oid": "6797a2e2e9050bb2e6f2e3c5"
+  },
+  "productImages": [
+    "https://i.ibb.co.com/V0mb6YbV/samsung-galaxy-s25-ultra-titanium-blue-official-image-1.webp",
+    "https://i.ibb.co.com/Z1X3KRyN/samsung-galaxy-s25-ultra-titanium-blue-full-back-camera-side-image.webp",
+    "https://i.ibb.co.com/B59VfF3X/samsung-galaxy-s25-ultra-titanium-blue-side-image.webp",
+    "https://i.ibb.co.com/hJBd6hDr/samsung-galaxy-s25-ultra-titanium-blue-back-side-image.webp",
+    "https://i.ibb.co.com/99c19WWD/samsung-galaxy-s25-ultra-back-side-image.webp",
+    "https://i.ibb.co.com/3ytWwgK3/samsung-galaxy-s25-ultra-power-button-side-image.webp"
+  ],
+  "isDeleted": false,
+  "createdAt": {
+    "$date": "2025-01-30T05:41:02.211Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-30T05:41:02.211Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679b153089b52a2eb91c5558"
+  },
+  "name": "Infinix Hot 30",
+  "description": "Infinix Hot 30 definitely shook and shaped the smartphone market after its release. Both 4 and 8 GB versions are highly attractive deals. Firstly the design looks nice and stylish, with color-shifting back panels (except the black color). This alone attracts a lot of potential buyers.  Then just look at its overall specifications. You get almost everything that you desire at a price like this. Full HD display, good quality camera, 33W charger, Helio G88 chipset, stereo speakers and so on.  But there is no screen protection or splash resistance. Also, a noise cancellation microphone is missing which are some of its drawbacks.",
+  "price": 13053,
+  "stockQuantity": 20,
+  "category": {
+    "$oid": "6797a2e2e9050bb2e6f2e3c5"
+  },
+  "productImages": [
+    "https://i.ibb.co.com/yF7C5gfV/1710157833kgj-CF.webp",
+    "https://i.ibb.co.com/8L8MJyBr/1711524058hi-Mx9.webp",
+    "https://i.ibb.co.com/fzLPMBjD/1711524049d-Yu2-E.webp"
+  ],
+  "isDeleted": false,
+  "createdAt": {
+    "$date": "2025-01-30T05:59:12.916Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-30T05:59:12.916Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679b161f89b52a2eb91c555f"
+  },
+  "name": "Udfine Watch Starry",
+  "description": "The **Udfine Watch Starry** is a sleek and stylish smartwatch that combines cutting-edge technology with modern design. Released on **15th July 2023**, this device offers a vibrant **1.8-inch AMOLED display** with a high **316 ppi pixel density**, ensuring clear and sharp visuals. With **IP68 waterproofing**, it's built to withstand water immersion, sweat, and rain. The **300 mAh battery** provides up to **7 days of standby time**, allowing you to stay connected without constant recharging. Equipped with fitness features like a **passometer**, **fitness tracker**, and **sleep tracker**, the Watch Starry helps you monitor your health and activity levels. You can easily receive **text messages**, **incoming calls**, and **calendar reminders**, keeping you updated on the go. The watch is made from durable **silica gel** with a **magnetic strap**, making it comfortable for all-day wear. It also offers **Bluetooth v5.3** for seamless connectivity with your phone, ensuring you never miss an update. Lightweight at just **37.7 grams** and with a slim profile of **11.42 mm**, it is both functional and stylish. Priced at **BDT 3,268**, the **Udfine Watch Starry** is the perfect combination of form and function, ideal for anyone seeking a reliable and fashionable smartwatch.",
+  "price": 3268,
+  "stockQuantity": 50,
+  "category": {
+    "$oid": "6797a329e9050bb2e6f2e3d4"
+  },
+  "productImages": [
+    "https://i.ibb.co.com/ks9WWtCz/udfine-watch-starry-black-image.webp",
+    "https://i.ibb.co.com/5Xr5PV73/udfine-watch-starry-official-image.webp",
+    "https://i.ibb.co.com/Xr7VzPm4/udfine-watch-starry-back-side-image.webp"
+  ],
+  "isDeleted": false,
+  "createdAt": {
+    "$date": "2025-01-30T06:03:11.312Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-30T06:03:11.312Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679b16e989b52a2eb91c556d"
+  },
+  "name": "Apple Watch Series 9",
+  "description": "Apple Watch Series 9 is a premium smartwatch that offers powerful features with premium build quality. It has a 1.9-inch Retina LTPO OLED touch screen, with a pixel density of 221 ppi, resolution of 484×396 pixels. It has the ability to go up to 2000 nits of peak brightness of the screen.The watch comes in 41mm and comes with weights of 42.3 grams in equal measure.  Supported by the Apple S9 SiP, with 64-bit dual-core processor, and equipped with a four-core Neural Engine. LTE connectivity is also provided, as well as GPS, and the watch is IP6X compliant and can withstand 50 meters of water. It comes with a battery power of 308 mAh, and you can get as much as 18 hours of use. The Apple Watch Series 9 price in Bangladesh is BDT 41,000 (Unofficial) for 64GB of internal storage.",
+  "price": 41000,
+  "stockQuantity": 19,
+  "category": {
+    "$oid": "6797a329e9050bb2e6f2e3d4"
+  },
+  "productImages": [
+    "https://i.ibb.co.com/pvyk5my6/apple-watch-series-9-midnight-official-image.webp",
+    "https://i.ibb.co.com/bjNqPcNM/apple-watch-series-9-black-band-image.webp",
+    "https://i.ibb.co.com/Nn7L3z6n/apple-watch-series-9-pink-band-image.webp",
+    "https://i.ibb.co.com/fV2FmpfJ/apple-watch-series-9-color-band-image.webp"
+  ],
+  "isDeleted": false,
+  "createdAt": {
+    "$date": "2025-01-30T06:06:33.705Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-30T06:06:33.705Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679b188189b52a2eb91c5571"
+  },
+  "name": "Canon Eos 4000D",
+  "description": "The Canon EOS 4000D is a versatile DSLR camera, released on February 18, 2018, and currently available in the market. It features an 18-megapixel CMOS sensor and DIGIC 4+ processor, ensuring high-quality image capture with a wide ISO range of 100-6400, expandable to 12800. The camera is equipped with a 2.7-inch LCD monitor, offering a resolution of 1920x1080, along with an optical viewfinder and an array of 9 autofocus points. Its lens mount is compatible with Canon EF/EF-S lenses, and it provides various shooting modes, including RAW and JPEG formats. The EOS 4000D supports video recording in Full HD (1920x1080), and offers slow-motion effects depending on the camera’s capabilities. The camera uses SD/SDHC/SDXC cards for storage and has a built-in flash, with support for external flash units. With a compact design, weighing around 436g, and a price of BDT 40,000, the Canon EOS 4000D is a great choice for both beginner and intermediate photographers looking to explore DSLR photography.",
+  "price": 40000,
+  "stockQuantity": 3,
+  "category": {
+    "$oid": "6797a308e9050bb2e6f2e3ce"
+  },
+  "productImages": [
+    "https://i.ibb.co.com/QFt8WyNT/1711621677um-S4z.webp"
+  ],
+  "isDeleted": false,
+  "createdAt": {
+    "$date": "2025-01-30T06:13:21.406Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-30T06:13:21.406Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679b18e789b52a2eb91c5575"
+  },
+  "name": "MacBook Air (M1, 2020) ",
+  "description": "The Apple MacBook Air (M1, 2020) is a sleek and powerful laptop, released on December 21, 2020. It features Apple's revolutionary M1 ARM processor, with 8 cores (4 performance cores and 4 efficiency cores), delivering exceptional speed and efficiency. The laptop comes with 8GB of LPDDR5 RAM, ensuring smooth multitasking and performance, and 256GB of SSD storage. The 13.3-inch LED-backlit display boasts a high resolution of 2560x1600 pixels, with a wide color (P3) gamut and True Tone technology, offering vibrant visuals. With a battery capacity of 49.9W and up to 15 hours of battery life, this device offers impressive longevity for work and entertainment. It also includes two Thunderbolt 3/USB-C ports, a 3.5mm headphone jack, and supports Wi-Fi, Bluetooth, and USB-C for connectivity. The MacBook Air runs macOS 11 Big Sur, with a Force Touch trackpad and a backlit Magic Keyboard for enhanced user experience. Weighing just 1.29kg and available in Silver, Starlight, Space Grey, and Midnight colors, it is ideal for users seeking a lightweight yet powerful device. Priced at BDT 97,000, this model is a great option for Apple enthusiasts looking for high performance at an affordable price.",
+  "price": 97000,
+  "stockQuantity": 1,
+  "category": {
+    "$oid": "6797a2f7e9050bb2e6f2e3cb"
+  },
+  "productImages": [
+    "https://i.ibb.co.com/GQzVFB1H/1711604477p-El-Yz.webp"
+  ],
+  "isDeleted": false,
+  "createdAt": {
+    "$date": "2025-01-30T06:15:03.499Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-30T06:15:03.499Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679b1a5f89b52a2eb91c5581"
+  },
+  "name": "oya BY-M1 Omnidirectional Lavalier Microphone (Original)",
+  "description": "The Boya BY-M1 Omnidirectional Lavalier Microphone is a high-quality clip-on microphone designed for a wide range of audio and video applications. It features an omnidirectional condenser microphone, ideal for capturing clear and crisp audio in presentations, video recording, and interviews. The microphone has a frequency range of 65Hz to 18 kHz and a sensitivity of -30dB +/- 3dB, providing excellent sound quality. With a 6.0-meter cable, it offers flexibility in positioning, and its low handling noise ensures clear sound capture without unwanted interference.   The microphone uses an LR44 battery and connects via a 3.5mm 4-pole gold-plated plug, ensuring compatibility with devices such as smartphones, DSLRs, camcorders, audio recorders, and PCs. It also comes with useful accessories, including a lapel clip, foam windscreen, and a 1/4” adapter for enhanced convenience. With its lightweight design and a 2-year warranty, the Boya BY-M1 is an excellent choice for content creators and professionals looking for reliable, high-quality audio equipment at an affordable price.",
+  "price": 950,
+  "stockQuantity": 12,
+  "category": {
+    "$oid": "6797a31be9050bb2e6f2e3d1"
+  },
+  "productImages": [
+    "https://i.ibb.co.com/6RMrpqfx/by-m1-500x500.webp",
+    "https://i.ibb.co.com/q3qf4LT8/by-m1-1-500x500.jpg",
+    "https://i.ibb.co.com/0jvzF4fQ/by-m1-3-500x500.jpg",
+    "https://i.ibb.co.com/q4DGd46/by-m1-4-500x500.jpg"
+  ],
+  "isDeleted": false,
+  "createdAt": {
+    "$date": "2025-01-30T06:21:19.708Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-30T06:21:19.708Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679b1f1589b52a2eb91c55d0"
+  },
+  "name": "BOYA Mini-12 Wireless Microphone System",
+  "description": "The BOYA Mini-12 Wireless Microphone System is a flexible and small audio solution that works across several devices. The BOYA Mini-12 Wireless Microphone System for Android and iOS is compatible with both Android and iOS. It supports UC and DI systems, allowing for seamless playback without the need to remove the receiver. It is powered directly by the connected mobile device and supports USB-C and Lightning for universal use. The BOYA Mini-12 Microphone System has twin microphones and is 31 × 15 x 16.4 mm. It weighs only 5 g, making it lightweight and portable. It produces professional-grade audio at a 48 kHz sample rate, 16-bit depth, and a signal-to-noise ratio of more than 80 dB, with a frequency response range of 20 Hz to 20 kHz. It can withstand up to 120 decibels SPL and contains one-click noise cancellation, a three-level voice changer, and an ultra-low latency of 25 milliseconds. The built-in 6 mm condenser microphone and strong metal clip provide high-quality sound capture and secure connection. The BOYA Microphone System has a 6-hour battery life and a small charging case, making it suitable for artists and professionals looking for dependable, high-performance audio equipment.",
+  "price": 6500,
+  "stockQuantity": 8,
+  "category": {
+    "$oid": "6797a31be9050bb2e6f2e3d1"
+  },
+  "productImages": [
+    "https://i.ibb.co.com/m5RGmndk/mini-12-01-500x500.webp",
+    "https://i.ibb.co.com/jP2LbSgR/mini-12-02-500x500.webp",
+    "https://i.ibb.co.com/TBKVMWqp/mini-12-03-500x500.webp",
+    "https://i.ibb.co.com/mVVwWCB7/mini-12-04-500x500.webp"
+  ],
+  "isDeleted": false,
+  "createdAt": {
+    "$date": "2025-01-30T06:41:25.823Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-30T06:41:25.823Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679b1f5489b52a2eb91c55d4"
+  },
+  "name": " Takstar CH-58 Microphone Clamp",
+  "description": "The Takstar CH-58 is a clamp for holding most cylindrical bodied microphones including Takstar instrument condenser microphones. CH-58 uses a special plastic microphone clip with an inner diameter range of 20-25mm. It is suitable for professional condenser microphones (eg PCM series). It has no warranty.",
+  "price": 700,
+  "stockQuantity": 9,
+  "category": {
+    "$oid": "6797a31be9050bb2e6f2e3d1"
+  },
+  "productImages": [
+    "https://i.ibb.co.com/hJ5y2bNM/ch-58-500x500.jpg"
+  ],
+  "isDeleted": false,
+  "createdAt": {
+    "$date": "2025-01-30T06:42:28.768Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-30T06:42:28.768Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679b1f9289b52a2eb91c55d9"
+  },
+  "name": "AMD Ryzen 5 3400G Processor Desktop PC",
+  "description": "The AMD Ryzen 5 3400G Processor Desktop PC is a powerful, all-round system designed to cater to gamers, creators, and professionals alike. At its core is the AMD Ryzen 5 3400G Processor, featuring 4 cores and 8 threads with a base clock of 3.7 GHz and a boost clock of 4.2 GHz, delivering exceptional performance for multitasking and demanding applications. Integrated Radeon RX Vega 11 Graphics ensures smooth visuals for gaming and media tasks, eliminating the need for a dedicated graphics card. The MSI B450M-A PRO Max II mATX Motherboard is complementing the processor, offering seamless compatibility with AMD Ryzen processors. Its advanced features, including DDR4 Boost and PCIe 3.0 support, ensure reliable and stable operation. The system has 8GB Team T-CREATE CLASSIC 8GB DDR4 3200MHz Desktop RAM clocked at 3200MHz, providing the speed and efficiency required for lag-free multitasking. The Colorful CN600 PRO 256GB M.2 NVMe SSD delivers lightning-fast read and write speeds, ensuring quick boot times and enhanced system responsiveness. All these components are housed in the MaxGreen H6 Mid-Tower M-ATX Case with 200W Standard PSU, a compact and stylish enclosure designed with efficient airflow. The pre-installed power supply makes setup hassle-free and ensures stable power delivery. This desktop PC is an excellent choice for those looking for a system that offers exceptional performance and future-proof upgradability. From gaming and streaming to content creation and office productivity, the AMD Ryzen 5 3400G Desktop PC is built to handle it easily. Elevate your computing experience and enjoy unmatched efficiency and performance today.",
+  "price": 20799,
+  "stockQuantity": 2,
+  "category": {
+    "$oid": "6797a2f7e9050bb2e6f2e3cb"
+  },
+  "productImages": [
+    "https://i.ibb.co.com/JwGVGYWm/amd-ryzen-5-3400g-processor-desktop-pc-0011-500x500.webp"
+  ],
+  "isDeleted": false,
+  "createdAt": {
+    "$date": "2025-01-30T06:43:30.554Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-30T06:43:30.554Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679b200889b52a2eb91c55dd"
+  },
+  "name": "HAVIT HV-G92 Gamepad",
+  "description": "The HAVIT HV-G92 Gamepad is a wired controller designed for gaming enthusiasts who seek precision and comfort. It features a reliable 3D ergonomic design with built-in motors for dual vibration, enhancing the gaming experience by providing tactile feedback during gameplay. The gamepad includes 8 direction buttons, 12 action buttons, and 2 analog sticks, offering a variety of controls for a wide range of games. The Turbo function and clear special functions further improve the gameplay experience, allowing for rapid action and efficiency.  This controller connects to your PC via USB and is fully compatible with most PC games, offering a seamless plug-and-play experience. Weighing just 299 grams, it’s designed to be lightweight and comfortable for extended gaming sessions. With a package size of 17.8 x 16.8 x 7.4 cm, it’s compact and easy to store. The HAVIT HV-G92 comes with a 1-year warranty, ensuring reliability and quality for gamers looking for a solid, affordable gamepad.",
+  "price": 950,
+  "stockQuantity": 18,
+  "category": {
+    "$oid": "6797a338e9050bb2e6f2e3d7"
+  },
+  "productImages": [
+    "https://i.ibb.co.com/jPm4QdTL/hv-g92-001-500x500.webp",
+    "https://i.ibb.co.com/VYJjMbLF/hv-g92-002-500x500.webp"
+  ],
+  "isDeleted": false,
+  "createdAt": {
+    "$date": "2025-01-30T06:45:28.631Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-30T06:45:28.631Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679b206189b52a2eb91c55e2"
+  },
+  "name": "Xtrike Me DK-02 Gaming Desk Table",
+  "description": "The Xtrike Me DK-02 gaming desk provides players with an immersive gaming experience for its design and performance. The gaming desk's most notable feature is the strong and durable \"Z\" shaped frame on both sides, which ensures stability and adds a distinctive and lucrative look to any gaming setup. The Xtrike Me DK-02 gaming desk features a spacious gaming area with a 15 mm thick plywood panel that can hold your computer, monitors, keyboard, and mouse. The surface is composed of 1.5 cm-thick carbon fiber confirming strength and durability to withstand daily pressures and vibrations. The Xtrike Me DK-02 enhances your gaming experience while providing comfort and convenience. The gaming desk comes with features like an integrated cup holder and headset holder to keep your drink and headset close at hand. The sturdy steel base of the gaming table is built with high-quality materials to provide all of your devices with the stability and support they require. The Xtrike Me DK-02 gaming desk comes with innovative design and outstanding functionality.",
+  "price": 18000,
+  "stockQuantity": 1,
+  "category": {
+    "$oid": "6797a338e9050bb2e6f2e3d7"
+  },
+  "productImages": [
+    "https://i.ibb.co.com/nqhbj3qs/dk-02-01-500x500.webp",
+    "https://i.ibb.co.com/DPsjNvtC/dk-02-03-500x500.webp"
+  ],
+  "isDeleted": false,
+  "createdAt": {
+    "$date": "2025-01-30T06:46:57.419Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-30T06:46:57.419Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679b20a989b52a2eb91c55e6"
+  },
+  "name": "Meta Quest 3s 128GB All-in-One VR Headset",
+  "description": "Meta Quest 3s 128GB All-in-One VR Headset The Meta Quest 3S VR Headset offers an affordable entry into the world of mixed reality, combining the powerful performance of the Meta Quest 3 with a budget-friendly price. Featuring full-color passthrough, a high-performance processor, and stunning 1832 x 1920 resolution per eye, it delivers smooth and immersive VR experiences. The lightweight, ergonomic design ensures comfort during extended use, with adjustable straps for a perfect fit. Available in 128GB models, it provides ample storage for apps, games, and media. Enhanced interaction is made possible with intuitive hand tracking and Touch Plus Controllers. The package includes the Meta Quest 3S headset, adjustable facial interface, two Touch Plus Controllers with wrist straps, a charging cable, power adapter, and AA batteries. Additionally, buyers receive access to exclusive content and a 3-month trial of Meta Quest+, making the Meta Quest 3S the perfect blend of performance, comfort, and affordability for exploring new worlds, playing games, or enhancing productivity.  Seamless Mixed Reality Experience the future with the Meta Quest 3S VR Headset's seamless mixed reality capabilities. This innovative feature allows you to effortlessly blend digital objects into your physical environment using full-color passthrough technology. Whether you're playing a virtual board game on your kitchen table or decorating your living room with virtual art, the Meta Quest 3S intelligently understands and interacts with your surroundings, creating a natural and intuitive mixed reality experience that feels incredibly real.  Powerful Performance with Snapdragon XR2 Gen 2 The Meta Quest 3S VR Headset is designed to deliver powerful performance, ensuring smooth and lag-free experiences even with the most demanding applications. Equipped with a high-performance processor, it provides faster load times and seamless gameplay, allowing you to fully immerse yourself in virtual worlds without any interruptions. Whether you're exploring new realms or engaging in high-intensity VR games, the Meta Quest 3S ensures that everything runs flawlessly.  Comfortable Design Comfort meets innovation with the Meta Quest 3S VR Headset's ergonomic design. Lightweight and thoughtfully crafted, this headset is designed for extended use without causing discomfort. The adjustable straps ensure a perfect fit for any user, while the slim profile evenly distributes weight, making it feel lighter on your head. Whether you're diving into a long gaming session or exploring virtual environments, the Meta Quest 3S offers unparalleled comfort and ease of use.  Enhanced Interaction Interact with your virtual world like never before with the Meta Quest 3S VR Headset's enhanced interaction features. The intuitive hand tracking technology allows you to navigate and control your VR experiences with natural hand movements, while the Touch Plus Controllers provide precise control and realistic feedback. This combination of advanced interaction methods ensures that every action feels responsive and immersive, bringing your virtual adventures to life in a way that's both engaging and intuitive.  Buy Meta Quest 3s 128GB All-in-One VR Headset from the best Virtual Reality Shop in Bangladesh: Star Tech In Bangladesh, you can get original Meta Quest 3s 128GB All-in-One VR Headset From Star Tech. We have a large collection of latest Meta Quest 3s VR Headset to purchase for your Virtual Reality Experience. Order Online Or Visit your Nearest Star Tech Shop to get yours at lowest price. The Meta Quest 3s comes with no warranty.",
+  "price": 46990,
+  "stockQuantity": 2,
+  "category": {
+    "$oid": "6797a338e9050bb2e6f2e3d7"
+  },
+  "productImages": [
+    "https://i.ibb.co.com/Y4VsLg5D/meta-quest-3s-01-500x500.webp"
+  ],
+  "isDeleted": false,
+  "createdAt": {
+    "$date": "2025-01-30T06:48:09.147Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-30T06:48:09.147Z"
+  },
+  "__v": 0
+}]
